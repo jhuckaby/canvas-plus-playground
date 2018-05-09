@@ -1,0 +1,520 @@
+/* Styles for CanvasPlus Playground */
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+body {
+	background-color: #fff;
+	background-image: radial-gradient(ellipse at center, rgb(255, 255, 255) 0%, rgb(235, 235, 235) 100%);
+	font-size: 12px;
+}
+
+image, div.main_preview {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-crisp-edges;
+	image-rendering: pixelated;
+}
+
+div.left_sidebar {
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	padding-top: 11px;
+	padding-left: 10px;
+	overflow-y: auto;
+	z-index: 2;
+}
+
+div.filter_container {
+	
+}
+
+div.add_filter_container {
+	margin-top: 5px;
+	margin-right: 10px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+div.filter {
+	padding-bottom: 13px;
+}
+
+div.filter_inner {
+	width: 230px;
+	background: white;
+	box-shadow: 0px 0px 4px #aaa;
+}
+
+div.filter_header {
+	position: relative;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 20px;
+	padding-left: 5px;
+	background: #f4f4f4;
+	color: #555;
+	text-shadow: 0px 1px 0px white;
+	cursor: default;
+}
+
+div.filter_container div.filter_header {
+	cursor: -webkit-grab;
+	cursor: grab;
+}
+
+div.filter_container div.filter_header:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+div.filter_header > i {
+	color: #bbb;
+}
+/* div.filter_header:hover > i {
+	color: #888;
+} */
+
+div.filter_close {
+	position: absolute;
+	left: 100%;
+	width: 16px;
+	margin-left: -17px;
+	text-align: center;
+	cursor: pointer;
+	color: #888;
+}
+div.filter_close:hover {
+	color: #3f7ed5;
+}
+
+div.filter_reset {
+	position: absolute;
+	left: 100%;
+	width: 16px;
+	margin-left: -32px;
+	text-align: center;
+	cursor: pointer;
+	color: #888;
+}
+div.filter_reset:hover {
+	color: #3f7ed5;
+}
+
+div.filter_content {
+	padding: 7px 10px 5px 10px;
+	font-size: 12px;
+	
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+div.filter.dragover {
+	box-shadow: 0px 0px 2px 2px blue;
+}
+
+div.info_value:last-of-type {
+	margin-bottom: 4px;
+}
+
+div.info_value > input[type=range] {
+	display: inline-block;
+	width: 81%;
+	margin: 0;
+}
+div.info_value > input[type=text].range {
+	display: inline-block;
+	width: 16%;
+}
+
+div.info_value > input[type=text].color {
+	width: 75%;
+}
+
+div.info_value > span.color_picker_link {
+	cursor: pointer;
+}
+div.info_value > span.color_picker_link:hover {
+	color: #3f7ed5;
+}
+div.info_value > span.color_picker_link:before {
+	font-family: FontAwesome;
+	content: "\f1de";
+	display: inline-block;
+	padding-left: 4px;
+	padding-right: 3px;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+div.info_value label {
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 16px; /* for valign with checkboxes */
+	padding-right: 2px;
+}
+
+div.info_value textarea {
+	width: 100%;
+	height: 80px;
+	border: 1px solid #ccc;
+	outline: none;
+	font-size: 11px;
+}
+
+div.filter_group {
+	margin-bottom: 8px;
+}
+
+div.curve_icon {
+	margin-left: 3px;
+	cursor: pointer;
+}
+div.curve_icon:hover {
+	color: #3f7ed5;
+}
+
+table th { text-align: left; }
+
+table.metrics { margin-left: 10px; margin-top: 5px; }
+table.metrics tr th { font-size: 11px; border-bottom: 1px solid #ccc; }
+table.metrics tr td { font-size: 11px; }
+
+table.metrics.padding20 tr th { padding-right: 20px; }
+table.metrics.padding10 tr th { padding-right: 10px; }
+table.metrics.padding20 tr td { padding-right: 20px; }
+table.metrics.padding10 tr td { padding-right: 10px; }
+
+table.metrics tr.total td { border-top: 1px solid #ccc; }
+
+/* Zoom Menu */
+
+div.zoom_container {
+	position: absolute;
+	width: 120px;
+	height: 27px;
+	top: 6px;
+	left: 50%;
+	margin-left: -60px;
+	z-index: 2;
+	text-align: center;
+	
+	/* padding-top: 2px;
+	padding-top: 2px; */
+	
+	background: white;
+	box-shadow: 0px 0px 4px #aaa;
+}
+
+div.zoom_container > * {
+	line-height: 27px;
+}
+
+div.zoom_container select {
+	font-size: 12px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.zoom_icon {
+	color: #666;
+	cursor: pointer;
+	text-shadow: 0px 0px 1px white;
+	
+	transform-origin: 50% 50%;
+	transform: scale(1.25);
+}
+.zoom_icon:hover {
+	color: #3f7ed5;
+}
+
+/* Main Preview */
+
+#preview_container {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+div.main_preview {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+	box-shadow: 0px 0px 4px #aaa;
+	transform-origin: 50% 50%;
+	/* transition: transform 0.1s ease-in-out; */
+	cursor: zoom-in;
+}
+
+div.main_preview > img {
+	vertical-align: top;
+}
+
+/* Info (Right) Sidebar */
+
+div.info_container {
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	left: 100%;
+	margin-left: -250px;
+	top: 0px;
+	padding-top: 10px;
+	padding-left: 10px;
+	overflow-y: auto;
+	z-index: 2;
+}
+
+div.info_container div.filter_header span { padding-left: 1px; }
+
+div.info_swatch {
+	width: 32px;
+	height: 11px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	overflow: hidden;
+}
+div.info_swatch_inner {
+	width: 32px;
+	height: 11px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+div.palette_swatch {
+	float: left;
+	width: 12px;
+	height: 12px;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+	overflow: hidden;
+	cursor: default;
+	background-size: 10px 10px !important;
+}
+div.palette_swatch_inner {
+	width: 12px;
+	height: 12px;
+}
+
+/* Progress Overlay */
+
+#progress_overlay {
+	position: fixed;
+	z-index: 10002;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	cursor: wait;
+	display: none;
+	
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+#progress_overlay.active {
+	display: block;
+}
+
+/* Misc */
+
+.noselect {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+div.checkerboard {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAD5JREFUeNpi/P//PwMp4Pr16ySpZ2KgMRi1YNSCUQtGLRi1gBqAhdTyXVNTczQORi0YtWDUglELhp8FAAEGAPh3CMRRbcR9AAAAAElFTkSuQmCC); /* checkerboard */
+	background-size: 16px 16px;
+}
+
+div.checkerboard_sm {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACpJREFUeNpi/P//PwM2cP36daziTAwkglENxAAWXOGtqak5Gkr00wAQYABVdwik0DFJlwAAAABJRU5ErkJggg==); /* small checkerboard */
+	background-size: 8px 8px;
+}
+
+.accelerate {
+	-webkit-transform: translate3d(0, 0, 0);
+	-moz-transform: translate3d(0, 0, 0);
+	-o-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+div.code_dialog_container {
+	min-width: 50vw;
+	max-width: 75vw;
+	min-height: 30vh;
+	max-height: 80vh;
+	overflow-y: scroll;
+	tab-size: 4;
+}
+div.code_dialog_container > pre {
+	padding: 0;
+}
+
+div.code_dialog_show_all_button_container {
+	position: absolute;
+	left: 100%;
+	top: 5px;
+	width: 120px;
+	margin-left: -130px;
+	height: 16px;
+}
+
+div.code_dialog_show_all_button_container table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+
+div.code_dialog_show_all_button_container table td {
+	margin: 0;
+	padding: 0;
+}
+
+div.code_dialog_show_all_button_container label {
+	padding-left: 0;
+	font-size: 11px;
+	color: #999;
+	font-weight: normal;
+	white-space: nowrap;
+}
+
+/* Color Picker */
+
+div.cpick_container {
+	width:450px; height:150px; position:relative; padding-left:150px;
+}
+
+div.cpick_swatch_container {
+	position:absolute; left:0; top:0; width:150px; height:150px;
+}
+
+div.cpick_swatch {
+	position:absolute; width:80px; height:80px;
+	box-shadow: 0px 0px 4px #aaa;
+}
+
+div.cpick_swatch_inner {
+	width:80px; height:80px;
+}
+
+div.cpick_container input[type=text].range {
+	margin-left: 3px;
+}
+
+div.cpick_container div.info_value {
+	margin-bottom: 5px;
+}
+
+/* Slider */
+
+input[type=range] {
+	-webkit-appearance: none;
+	margin: 10px 0;
+	width: 100%;
+}
+input[type=range]:focus {
+	outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 6px;
+	cursor: pointer;
+	background: #ccc;
+	background-image: linear-gradient(to bottom, #eee 0%, #ccc 100%);
+	box-shadow: 1px 1px 1px #aaa inset, -1px -1px 1px #eee inset;
+	border-radius: 5px;
+}
+input[type=range]::-webkit-slider-thumb {
+	border: 0px solid #000000;
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	background: #ccc;
+	background-image: linear-gradient(to bottom, #ddd 0%, #999 100%);
+	box-shadow: 1px 1px 0px #eee inset, -1px -1px 0px #999 inset;
+	cursor: -webkit-grab;
+	cursor: grab;
+	-webkit-appearance: none;
+	margin-top: -6px;
+}
+input[type=range]::-webkit-slider-thumb:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+input[type=range]::-moz-range-track {
+	width: 100%;
+	height: 6px;
+	cursor: pointer;
+	background: #ccc;
+	background-image: linear-gradient(to bottom, #eee 0%, #ccc 100%);
+	box-shadow: 1px 1px 1px #aaa inset, -1px -1px 1px #eee inset;
+	border-radius: 5px;
+}
+input[type=range]::-moz-range-thumb {
+	border: 0px solid #000000;
+	height: 16px;
+	width: 16px;
+	border-radius: 8px;
+	background: #ccc;
+	background-image: linear-gradient(to bottom, #ddd 0%, #999 100%);
+	box-shadow: 1px 1px 0px #eee inset, -1px -1px 0px #999 inset;
+	cursor: -webkit-grab;
+	cursor: grab;
+	margin-top: -6px;
+}
+input[type=range]::-moz-range-thumb:active {
+	cursor: -webkit-grabbing;
+	cursor: grabbing;
+}
+
+/* Color Picker Ranges */
+
+input.red::-webkit-slider-runnable-track {
+	background-image: linear-gradient(to right, #000 0%, #f00 100%);
+}
+input.red::-moz-range-track {
+	background-image: linear-gradient(to right, #000 0%, #f00 100%);
+}
+
+input.green::-webkit-slider-runnable-track {
+	background-image: linear-gradient(to right, #000 0%, #0f0 100%);
+}
+input.green::-moz-range-track {
+	background-image: linear-gradient(to right, #000 0%, #0f0 100%);
+}
+
+input.blue::-webkit-slider-runnable-track {
+	background-image: linear-gradient(to right, #000 0%, #00f 100%);
+}
+input.blue::-moz-range-track {
+	background-image: linear-gradient(to right, #000 0%, #00f 100%);
+}
+
+input.alpha::-webkit-slider-runnable-track {
+	background-image: linear-gradient(to right, #000 0%, #fff 100%);
+}
+input.alpha::-moz-range-track {
+	background-image: linear-gradient(to right, #000 0%, #fff 100%);
+}

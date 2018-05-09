@@ -1,0 +1,1280 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>CanvasPlus Playground</title>
+		<link rel="stylesheet" href="css/base.css">
+		<link rel="stylesheet" href="css/github-gist.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/highlight.min.js"></script>
+		<script src="js/dragsort.js"></script>
+		<script src="js/canvas-plus.js"></script>
+		<script src="js/utils.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/filters.js"></script>
+		<script src="js/filters/create.js"></script>
+		<script src="js/filters/load.js"></script>
+		<script src="js/filters/resize.js"></script>
+		<script src="js/filters/transform.js"></script>
+		<script src="js/filters/adjust.js"></script>
+		<script src="js/filters/border.js"></script>
+		<script src="js/filters/composite.js"></script>
+		<script src="js/filters/convolve.js"></script>
+		<script src="js/filters/crop.js"></script>
+		<script src="js/filters/curves.js"></script>
+		<script src="js/filters/expand.js"></script>
+		<script src="js/filters/flatten.js"></script>
+		<script src="js/filters/quantize.js"></script>
+		<script src="js/filters/opacity.js"></script>
+		<script src="js/filters/text.js"></script>
+		<script src="js/filters/trim.js"></script>
+		<script src="js/dialog.js"></script>
+		<script>
+			$(function() {
+				app.init();
+			});
+		</script>
+	</head>
+	<body>
+		
+		<div id="progress_overlay"></div>
+		
+		<!-- This is for the floating fixed message notification system -->
+		<div id="d_message" class="message" style="display:none" onMouseUp="app.hideMessage(250)">
+			<div id="d_message_inner" class="message_inner"></div>
+		</div>
+		
+		<div class="left_sidebar">
+			<div class="filter_container"></div>
+			<div class="add_filter_container">
+				<select id="fe_add_filter" onChange="app.addFilterFromMenu()">
+					<option value="">Add New Filter...</option>
+				</select>
+			</div>
+		</div>
+		
+		<div class="zoom_container noselect">
+			<i id="btn_zoom_out" class="fa fa-search-minus zoom_icon"></i>
+			<select id="fe_zoom">
+				<option value="0.0625">6.25%</option>
+				<option value="0.125">12.5%</option>
+				<option value="0.25">25%</option>
+				<option value="0.5">50%</option>
+				<option value="1" selected>100%</option>
+				<option value="2">200%</option>
+				<option value="4">400%</option>
+				<option value="8">800%</option>
+				<option value="16">1600%</option>
+			</select>
+			<i id="btn_zoom_in" class="fa fa-search-plus zoom_icon"></i>
+		</div>
+		
+		<div id="preview_container">
+			<div class="main_preview checkerboard"></div>
+		</div>
+		
+		<div class="info_container">
+			
+			<div class="filter">
+				<div class="filter_inner">
+					<div class="filter_header">
+						<i class="fa fa-info-circle">&nbsp;</i><span>Cursor</span>
+					</div>
+					<div class="filter_content">
+						<table class="metrics padding10" style="margin-top:0; margin-left:0;">
+							<tr>
+								<th>Position</th>
+								<th>Color</th>
+								<th>RGBA</th>
+							</tr>
+							<tr>
+								<td id="td_cur_pos">-</td>
+								<td id="td_cur_clr">
+									<div class="info_swatch checkerboard_sm"><div id="d_cur_clr" class="info_swatch_inner"></div></div>
+								</td>
+								<td id="td_cur_rgba">-</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			<div class="filter">
+				<div class="filter_inner">
+					<div class="filter_header">
+						<div class="filter_close" title="Refresh Image" onMouseUp="app.refreshImage()"><i class="fa fa-refresh"></i></div>
+						<i class="fa fa-info-circle">&nbsp;</i><span>Info</span>
+					</div>
+					<div class="filter_content">
+						<div class="info_label">Source Image</div>
+						<div class="info_value" id="d_image_src"></div>
+						
+						<div class="info_label">Perf Metrics</div>
+						<div class="info_value" id="d_image_perf"></div>
+						
+						<div class="info_label">Output Image</div>
+						<div class="info_value" id="d_image_info"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="filter">
+				<div class="filter_inner">
+					<div class="filter_header">
+						<i class="fa fa-info-circle">&nbsp;</i><span>Histogram</span>
+					</div>
+					<div class="filter_content">
+						<div style="text-align:center">
+							<select id="fe_histo_chan" style="font-size:11px" onChange="app.renderHistogram()">
+								<option value="rgb">RGB</option>
+								<option value="red">Red</option>
+								<option value="green">Green</option>
+								<option value="blue">Blue</option>
+								<option value="alpha">Alpha</option>
+							</select>
+						</div>
+						<canvas id="c_histo" width="512" height="256" style="width:100%; height:auto;"></canvas>
+					</div>
+				</div>
+			</div>
+			
+			<div class="filter">
+				<div class="filter_inner">
+					<div class="filter_header">
+						<i class="fa fa-info-circle">&nbsp;</i><span>Output Options</span>
+					</div>
+					<div id="fs_output" class="filter_content">
+						<div class="info_label">Image Format</div>
+						<div class="info_value">
+							<select id="fe_output_format">
+								<option value="jpeg">JPEG</option>
+								<option value="png">PNG</option>
+								<option value="gif">GIF</option>
+							</select>
+						</div>
+						
+						<div class="filter_group" id="grp_output_jpeg_quality">
+							<div class="info_label">JPEG Quality</div>
+							<div class="info_value">
+								<input type="range" id="fe_jpeg_quality" data-type="int" min="1" max="100" step="1" value="90"/>
+								<input type="text" class="range"/>
+							</div>
+						</div>
+						
+						<center><table style="margin-top:10px; margin-bottom:5px;"><tr>
+							<td><div class="button" style="width:100px;" onMouseUp="app.showCode()"><i class="fa fa-code">&nbsp;</i>View&nbsp;Code&hellip;</div></td>
+							<td><div style="width:10px; height:1px;"></div></td>
+							<td><div class="button" style="width:100px;" onMouseUp="app.downloadImage()"><i class="fa fa-download">&nbsp;</i>Download</div></td>
+						</tr></table></center>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<!-- Filter Definitions -->
+		<div style="display:none">
+			
+			<!-- Base Filter Template -->
+			<div id="fdef_base">
+				<div class="filter">
+					<div class="filter_inner">
+						<div class="filter_header">
+							<div class="filter_close" title="Remove Filter"><i class="fa fa-times-circle"></i></div>
+							<div class="filter_reset" title="Reset Filter"><i class="fa fa-undo"></i></div>
+							<i class="fa fa-bars">&nbsp;&nbsp;</i><span>Title</span>
+						</div>
+						<!-- <div class="filter_content"></div> -->
+					</div>
+				</div>
+			</div>
+			
+			<!-- Create Filter -->
+			<div class="filter" id="fdef_create">
+				<div class="filter_content">
+					<div class="info_label">Canvas Size</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="width" data-type="int" data-min="1" data-max="16383"/> x 
+						<input type="text" size="6" data-key="height" data-type="int" data-min="1" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Background Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="background"/>
+					</div>
+				</div>
+			</div> <!-- Create End -->
+			
+			<!-- Load Filter -->
+			<div class="filter" id="fdef_load">
+				<div class="filter_content">
+					<div class="info_label">Source</div>
+					<div class="info_value">
+						<select data-key="image">
+							<optgroup label="Sample Images">
+								<option value="earth-nasa.jpg">Earth from Space (JPEG, 1024x1024)</option>
+								<option value="html5-logo.png">HTML5 Logo (Alpha PNG, 512x512)</option>
+								<option value="rgb-ramp.png">RGB Ramp (PNG, 256x256)</option>
+								<option value="rgba-ramp.png">RGBA Ramp (Alpha PNG, 256x256)</option>
+								<option value="sunset.jpg">Sunset (JPEG, 1920x1080)</option>
+								<option value="test-pattern.png">Test Pattern (PNG, 768x576)</option>
+								<option value="waterfall.jpg">Waterfall (JPEG, 1920x1080)</option>
+							</optgroup>
+							<optgroup label="Custom">
+								<option value="_file_">(Local File)</option>
+								<option value="_url_">(Remote URL)</option>
+							</optgroup>
+						</select>
+					</div>
+					
+					<div class="info_label">Local File</div>
+					<div class="info_value">
+						<input type="file" data-custom="file"/>
+					</div>
+					
+					<div class="info_label">Remote URL</div>
+					<div class="info_value">
+						<input type="text" data-key="url" style="width:100%" placeholder="http://"/>
+					</div>
+				</div>
+			</div> <!-- Load End -->
+			
+			<!-- Resize Filter -->
+			<div class="filter" id="fdef_resize">
+				<div class="filter_content">
+					<div class="info_label">Target Size</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="width" data-type="int" data-min="1" data-max="16383"/> x 
+						<input type="text" size="6" data-key="height" data-type="int" data-min="1" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Resize Mode</div>
+					<div class="info_value">
+						<select data-key="mode">
+							<option value="fit">Fit (Contain)</option>
+							<option value="fitpad">FitPad (Contain + Padding)</option>
+							<option value="fitover">FitOver (Cover)</option>
+							<option value="scale">Scale (Exact)</option>
+						</select>
+					</div>
+					
+					<div class="filter_group" data-group="background">
+						<div class="info_label">Background Color</div>
+						<div class="info_value">
+							<input type="text" class="color" data-type="color" data-key="background"/>
+						</div>
+					</div>
+					
+					<div class="info_label">Direction</div>
+					<div class="info_value">
+						<select data-key="direction">
+							<option value="shrink">Shrink Only</option>
+							<option value="enlarge">Enlarge Only</option>
+							<option value="both">Both (Any)</option>
+						</select>
+					</div>
+					
+					<div class="filter_group" data-group="gravity">
+						<div class="info_label">Gravity (Alignment)</div>
+						<div class="info_value">
+							<select data-key="gravity">
+								<option value="center">&bull; Center</option>
+								<option value="north">&uarr; North</option>
+								<option value="northeast">&nearr; Northeast</option>
+								<option value="east">&rarr; East</option>
+								<option value="southeast">&searr; Southeast</option>
+								<option value="south">&darr; South</option>
+								<option value="southwest">&swarr; Southwest</option>
+								<option value="west">&larr; West</option>
+								<option value="northwest">&nwarr; Northwest</option>
+							</select>
+						</div>
+						
+						<div class="info_label">Offset</div>
+						<div class="info_value">
+							<input type="text" size="6" data-key="offsetX" data-type="int" data-min="-16383" data-max="16383"/> x 
+							<input type="text" size="6" data-key="offsetY" data-type="int" data-min="-16383" data-max="16383"/> (pixels)
+						</div>
+					</div>
+					
+					<div class="info_label">Anti-Aliasing</div>
+					<div class="info_value">
+						<select data-key="antialias">
+							<option value="best">Best</option>
+							<option value="good">Good</option>
+							<option value="fast">Fast</option>
+							<option value="nearest">Nearest</option>
+						</select>
+					</div>
+					
+				</div>
+			</div> <!-- Resize End -->
+			
+			<!-- Transform Filter -->
+			<div class="filter" id="fdef_transform">
+				<div class="filter_content">
+					<div class="info_label">Transformation</div>
+					<div class="info_value">
+						<select data-custom="mode">
+							<option value="rotate">Rotate</option>
+							<option value="fliph">Flip Horizontal</option>
+							<option value="flipv">Flip Vertical</option>
+							<option value="matrix">Matrix</option>
+						</select>
+					</div>
+					
+					<div class="filter_group" data-group="rotate">
+						<div class="info_label">Rotation Angle</div>
+						<div class="info_value">
+							<input type="range" data-key="rotate" data-type="float" min="0" max="360" value="0"/>
+							<input type="text" class="range"/>
+						</div>
+						
+						<div class="info_label">Options</div>
+						<div class="info_value">
+							<div><label><input type="checkbox" data-key="fixed"><span>Fixed Size</span></label></div>
+						</div>
+					</div>
+					
+					<div class="filter_group" data-group="matrix">
+						<div class="info_label">Transformation Matrix</div>
+						<div class="info_value">
+							<div>
+								<input type="text" size="4" data-custom="ma" data-type="float"/>
+								<input type="text" size="4" data-custom="mc" data-type="float"/>
+								<input type="text" size="4" data-custom="me" data-type="float"/>
+							</div>
+							<div>
+								<input type="text" size="4" data-custom="mb" data-type="float"/>
+								<input type="text" size="4" data-custom="md" data-type="float"/>
+								<input type="text" size="4" data-custom="mf" data-type="float"/>
+							</div>
+							<div>
+								<input type="text" size="4" value="0" disabled/>
+								<input type="text" size="4" value="0" disabled/>
+								<input type="text" size="4" value="1" disabled/>
+							</div>
+						</div>
+					</div>
+					
+					<div class="info_label">Background Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="background"/>
+					</div>
+					
+					<div class="info_label">Anti-Aliasing</div>
+					<div class="info_value">
+						<select data-key="antialias">
+							<option value="best">Best</option>
+							<option value="good">Good</option>
+							<option value="fast">Fast</option>
+							<option value="nearest">Nearest</option>
+						</select>
+					</div>
+				</div>
+			</div> <!-- Transform End -->
+			
+			<!-- Adjust Filter -->
+			<div class="filter" id="fdef_adjust">
+				<div class="filter_content">
+					<div class="info_label">Brightness</div>
+					<div class="info_value">
+						<input type="range" data-key="brightness" data-type="int" min="-255" max="255" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Contrast</div>
+					<div class="info_value">
+						<input type="range" data-key="contrast" data-type="int" min="-255" max="255" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Hue</div>
+					<div class="info_value">
+						<input type="range" data-key="hue" data-type="int" min="-360" max="360" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Saturation</div>
+					<div class="info_value">
+						<input type="range" data-key="saturation" data-type="int" min="-255" max="255" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+				</div>
+			</div> <!-- Adjust End -->
+			
+			<!-- Desaturate Filter -->
+			<div class="filter" id="fdef_desaturate">
+				<div class="filter_content">
+					<div class="info_value">
+						(No options available)
+					</div>
+				</div>
+			</div> <!-- Desaturate End -->
+			
+			<!-- Border Filter -->
+			<div class="filter" id="fdef_border">
+				<div class="filter_content">
+					<div class="info_label">Size</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="size" data-type="int" data-min="1" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="color"/>
+					</div>
+					
+					<div class="info_label">Mode</div>
+					<div class="info_value">
+						<select data-key="mode">
+							<option value="inside">Inside</option>
+							<option value="center">Center</option>
+							<option value="outside">Outside</option>
+						</select>
+					</div>
+				</div>
+			</div> <!-- Border End -->
+			
+			<!-- Composite Filter -->
+			<div class="filter" id="fdef_composite">
+				<div class="filter_content">
+					<div class="info_label">Image</div>
+					<div class="info_value">
+						<select data-key="image">
+							<optgroup label="Sample Images">
+								<option value="earth-ball.png">Earth Ball (Alpha PNG, 256x256)</option>
+								<option value="html5-logo.png">HTML5 Logo (Alpha PNG, 512x512)</option>
+								<option value="rgba-ramp.png">RGBA Ramp (Alpha PNG, 256x256)</option>
+								<option value="tree.png">Tree (Alpha PNG, 512x320)</option>								
+							</optgroup>
+							<optgroup label="Custom">
+								<option value="_file_">(Local File)</option>
+								<option value="_url_">(Remote URL)</option>
+							</optgroup>
+						</select>
+					</div>
+					
+					<div class="info_label">Local File</div>
+					<div class="info_value">
+						<input type="file" data-custom="file"/>
+					</div>
+					
+					<div class="info_label">Remote URL</div>
+					<div class="info_value">
+						<input type="text" data-key="url" style="width:100%" placeholder="http://"/>
+					</div>
+					
+					<div class="info_label">Optional Resize</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="width" data-type="int" data-min="0" data-max="16383"/> x 
+						<input type="text" size="6" data-key="height" data-type="int" data-min="0" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Gravity (Alignment)</div>
+					<div class="info_value">
+						<select data-key="gravity">
+							<option value="center">&bull; Center</option>
+							<option value="north">&uarr; North</option>
+							<option value="northeast">&nearr; Northeast</option>
+							<option value="east">&rarr; East</option>
+							<option value="southeast">&searr; Southeast</option>
+							<option value="south">&darr; South</option>
+							<option value="southwest">&swarr; Southwest</option>
+							<option value="west">&larr; West</option>
+							<option value="northwest">&nwarr; Northwest</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Margin</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="marginX" data-type="int" data-min="0" data-max="16383"/> x 
+						<input type="text" size="6" data-key="marginY" data-type="int" data-min="0" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Offset</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="offsetX" data-type="int" data-min="-16383" data-max="16383"/> x 
+						<input type="text" size="6" data-key="offsetY" data-type="int" data-min="-16383" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Opacity</div>
+					<div class="info_value">
+						<input type="range" data-key="opacity" data-type="float" min="0" max="1" step="0.01" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Composite Mode</div>
+					<div class="info_value">
+						<select data-key="mode">
+							<option value="source-over">Source Over</option>
+							<option value="source-in">Source In</option>
+							<option value="source-out">Source Out</option>
+							<option value="source-atop">Source Atop</option>
+							<option value="destination-over">Destination Over</option>
+							<option value="destination-in">Destination In</option>
+							<option value="destination-out">Destination Out</option>
+							<option value="destination-atop">Destination Atop</option>
+							<option value="lighter">Lighter</option>
+							<option value="copy">Copy</option>
+							<option value="xor">Exclusive Or</option>
+							<option value="multiply">Multiply</option>
+							<option value="screen">Screen</option>
+							<option value="overlay">Overlay</option>
+							<option value="darken">Darken</option>
+							<option value="lighten">Lighten</option>
+							<option value="color-dodge">Color Dodge</option>
+							<option value="color-burn">Color Burn</option>
+							<option value="hard-light">Hard Light</option>
+							<option value="soft-light">Soft Light</option>
+							<option value="difference">Difference</option>
+							<option value="exclusion">Exclusion</option>
+							<option value="hue">Hue</option>
+							<option value="saturation">Saturation</option>
+							<option value="color">Color</option>
+							<option value="luminosity">Luminosity</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Anti-Aliasing</div>
+					<div class="info_value">
+						<select data-key="antialias">
+							<option value="best">Best</option>
+							<option value="good">Good</option>
+							<option value="fast">Fast</option>
+							<option value="nearest">Nearest</option>
+						</select>
+					</div>
+				</div>
+			</div> <!-- Composite End -->
+			
+			<!-- Mask Filter -->
+			<div class="filter" id="fdef_mask">
+				<div class="filter_content">
+					<div class="info_label">Mask Image</div>
+					<div class="info_value">
+						<select data-key="image">
+							<optgroup label="Sample Images">
+								<option value="earth-ball.png">Earth Ball (Alpha PNG, 256x256)</option>
+								<option value="html5-logo.png">HTML5 Logo (Alpha PNG, 512x512)</option>
+								<option value="rgba-ramp.png">RGBA Ramp (Alpha PNG, 256x256)</option>
+								<option value="tree.png">Tree (Alpha PNG, 512x320)</option>								
+							</optgroup>
+							<optgroup label="Custom">
+								<option value="_file_">(Local File)</option>
+								<option value="_url_">(Remote URL)</option>
+							</optgroup>
+						</select>
+					</div>
+					
+					<div class="info_label">Local File</div>
+					<div class="info_value">
+						<input type="file" data-custom="file"/>
+					</div>
+					
+					<div class="info_label">Remote URL</div>
+					<div class="info_value">
+						<input type="text" data-key="url" style="width:100%" placeholder="http://"/>
+					</div>
+					
+					<div class="info_label">Optional Resize</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="width" data-type="int" data-min="0" data-max="16383"/> x 
+						<input type="text" size="6" data-key="height" data-type="int" data-min="0" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Gravity (Alignment)</div>
+					<div class="info_value">
+						<select data-key="gravity">
+							<option value="center">&bull; Center</option>
+							<option value="north">&uarr; North</option>
+							<option value="northeast">&nearr; Northeast</option>
+							<option value="east">&rarr; East</option>
+							<option value="southeast">&searr; Southeast</option>
+							<option value="south">&darr; South</option>
+							<option value="southwest">&swarr; Southwest</option>
+							<option value="west">&larr; West</option>
+							<option value="northwest">&nwarr; Northwest</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Margin</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="marginX" data-type="int" data-min="0" data-max="16383"/> x 
+						<input type="text" size="6" data-key="marginY" data-type="int" data-min="0" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Offset</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="offsetX" data-type="int" data-min="-16383" data-max="16383"/> x 
+						<input type="text" size="6" data-key="offsetY" data-type="int" data-min="-16383" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Opacity</div>
+					<div class="info_value">
+						<input type="range" data-key="opacity" data-type="float" min="0" max="1" step="0.01" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Anti-Aliasing</div>
+					<div class="info_value">
+						<select data-key="antialias">
+							<option value="best">Best</option>
+							<option value="good">Good</option>
+							<option value="fast">Fast</option>
+							<option value="nearest">Nearest</option>
+						</select>
+					</div>
+				</div>
+			</div> <!-- Mask End -->
+			
+			<!-- Convolve Filter -->
+			<div class="filter" id="fdef_convolve">
+				<div class="filter_content">
+					<div class="info_label">3x3 Kernel</div>
+					<div class="info_value">
+						<div>
+							<input type="text" size="4" data-custom="k1" data-type="float"/>
+							<input type="text" size="4" data-custom="k2" data-type="float"/>
+							<input type="text" size="4" data-custom="k3" data-type="float"/>
+						</div>
+						<div>
+							<input type="text" size="4" data-custom="k4" data-type="float"/>
+							<input type="text" size="4" data-custom="k5" data-type="float"/>
+							<input type="text" size="4" data-custom="k6" data-type="float"/>
+						</div>
+						<div>
+							<input type="text" size="4" data-custom="k7" data-type="float"/>
+							<input type="text" size="4" data-custom="k8" data-type="float"/>
+							<input type="text" size="4" data-custom="k9" data-type="float"/>
+						</div>
+					</div>
+					
+					<div class="info_label">Offset</div>
+					<div class="info_value">
+						<input type="range" data-key="offset" data-type="int" min="0" max="255" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Edge Mode</div>
+					<div class="info_value">
+						<select data-key="edges">
+							<option value="repeat">Repeat</option>
+							<option value="wrap">Wrap</option>
+							<option value="mirror">Mirror</option>
+							<option value="discard">Discard</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Convolve End -->
+			
+			<!-- Blur Filter -->
+			<div class="filter" id="fdef_blur">
+				<div class="filter_content">
+					<div class="info_label">Amount</div>
+					<div class="info_value">
+						<input type="range" data-key="amount" data-type="int" min="1" max="20" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Edge Mode</div>
+					<div class="info_value">
+						<select data-key="edges">
+							<option value="repeat">Repeat</option>
+							<option value="wrap">Wrap</option>
+							<option value="mirror">Mirror</option>
+							<option value="discard">Discard</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Blur End -->
+			
+			<!-- GBlur Filter -->
+			<div class="filter" id="fdef_gaussianBlur">
+				<div class="filter_content">
+					<div class="info_label">Amount</div>
+					<div class="info_value">
+						<input type="range" data-key="amount" data-type="int" min="1" max="20" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Sigma</div>
+					<div class="info_value">
+						<input type="range" data-key="sigma" data-type="int" min="1" max="20" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Edge Mode</div>
+					<div class="info_value">
+						<select data-key="edges">
+							<option value="repeat">Repeat</option>
+							<option value="wrap">Wrap</option>
+							<option value="mirror">Mirror</option>
+							<option value="discard">Discard</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- GBlur End -->
+			
+			<!-- Sharpen Filter -->
+			<div class="filter" id="fdef_sharpen">
+				<div class="filter_content">
+					<div class="info_label">Edge Mode</div>
+					<div class="info_value">
+						<select data-key="edges">
+							<option value="repeat">Repeat</option>
+							<option value="wrap">Wrap</option>
+							<option value="mirror">Mirror</option>
+							<option value="discard">Discard</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Sharpen End -->
+			
+			<!-- Emboss Filter -->
+			<div class="filter" id="fdef_emboss">
+				<div class="filter_content">
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Emboss End -->
+			
+			<!-- Find Edges Filter -->
+			<div class="filter" id="fdef_findEdges">
+				<div class="filter_content">
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Find Edges End -->
+			
+			<!-- Crop Filter -->
+			<div class="filter" id="fdef_crop">
+				<div class="filter_content">
+					<div class="info_label">Position</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="x" data-type="int" data-min="0" data-max="16383"/> x 
+						<input type="text" size="6" data-key="y" data-type="int" data-min="0" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Size</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="width" data-type="int" data-min="1" data-max="16383"/> x 
+						<input type="text" size="6" data-key="height" data-type="int" data-min="1" data-max="16383"/> (pixels)
+					</div>
+				</div>
+			</div> <!-- Crop End -->
+			
+			<!-- Curves Filter -->
+			<div class="filter" id="fdef_curves">
+				<div class="filter_content">
+					<div class="info_label">Curve Y Points</div>
+					<div class="info_value">
+						<input type="text" data-custom="points" style="width:100%" placeholder="0, 128, 255"/>
+					</div>
+					
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+					
+					<div class="info_label">
+						<div class="right curve_icon ci_add" title="Add Point"><i class="fa fa-plus-circle"></i></div>
+						<div class="right curve_icon ci_del" title="Remove Point"><i class="fa fa-minus-circle"></i></div>
+						Curve Editor
+					</div>
+					<div class="info_value">
+						<canvas width="512" height="256" style="width:100%; height:auto; box-shadow:0px 0px 1px rgba(0,0,0,0.4)"></canvas>
+					</div>
+				</div>
+			</div> <!-- Curves End -->
+			
+			<!-- Posterize Filter -->
+			<div class="filter" id="fdef_posterize">
+				<div class="filter_content">
+					<div class="info_label">Levels</div>
+					<div class="info_value">
+						<input type="range" data-key="levels" data-type="int" min="1" max="128" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Posterize End -->
+			
+			<!-- Solarize Filter -->
+			<div class="filter" id="fdef_solarize">
+				<div class="filter_content">
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Solarize End -->
+			
+			<!-- Invert Filter -->
+			<div class="filter" id="fdef_invert">
+				<div class="filter_content">
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Invert End -->
+			
+			<!-- Temperature Filter -->
+			<div class="filter" id="fdef_temperature">
+				<div class="filter_content">
+					<div class="info_label">Temperature</div>
+					<div class="info_value">
+						<input type="range" data-key="amount" data-type="int" min="-255" max="255" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+				</div>
+			</div> <!-- Temperature End -->
+			
+			<!-- Gamma Filter -->
+			<div class="filter" id="fdef_gamma">
+				<div class="filter_content">
+					<div class="info_label">Gamma</div>
+					<div class="info_value">
+						<input type="range" data-key="amount" data-type="float" min="0.25" max="4" step="0.01" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Gamma End -->
+			
+			<!-- Sepia Filter -->
+			<div class="filter" id="fdef_sepia">
+				<div class="filter_content">
+					<div class="info_value">
+						(No options available)
+					</div>
+				</div>
+			</div> <!-- Sepia End -->
+			
+			<!-- Normalize Filter -->
+			<div class="filter" id="fdef_normalize">
+				<div class="filter_content">
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Normalize End -->
+			
+			<!-- Threshold Filter -->
+			<div class="filter" id="fdef_threshold">
+				<div class="filter_content">
+					<div class="info_label">Level</div>
+					<div class="info_value">
+						<input type="range" data-key="level" data-type="int" min="0" max="255" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Channels</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="red"><span>Red</span></label>
+						<label><input type="checkbox" data-custom="green"><span>Green</span></label>
+						<label><input type="checkbox" data-custom="blue"><span>Blue</span></label>
+						<label><input type="checkbox" data-custom="alpha"><span>Alpha</span></label>
+					</div>
+				</div>
+			</div> <!-- Threshold End -->
+			
+			<!-- Expand Filter -->
+			<div class="filter" id="fdef_expand">
+				<div class="filter_content">
+					<div class="info_label">Expand Canvas By</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="width" data-type="int" data-min="0" data-max="16383"/> x 
+						<input type="text" size="6" data-key="height" data-type="int" data-min="0" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Background Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="background"/>
+					</div>
+					
+					<div class="info_label">Gravity (Alignment)</div>
+					<div class="info_value">
+						<select data-key="gravity">
+							<option value="center">&bull; Center</option>
+							<option value="north">&uarr; North</option>
+							<option value="northeast">&nearr; Northeast</option>
+							<option value="east">&rarr; East</option>
+							<option value="southeast">&searr; Southeast</option>
+							<option value="south">&darr; South</option>
+							<option value="southwest">&swarr; Southwest</option>
+							<option value="west">&larr; West</option>
+							<option value="northwest">&nwarr; Northwest</option>
+						</select>
+					</div>
+				</div>
+			</div> <!-- Expand End -->
+			
+			<!-- Flatten Filter -->
+			<div class="filter" id="fdef_flatten">
+				<div class="filter_content">
+					<div class="info_label">Background Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="background"/>
+					</div>
+				</div>
+			</div> <!-- Flatten End -->
+			
+			<!-- Opacity Filter -->
+			<div class="filter" id="fdef_opacity">
+				<div class="filter_content">
+					
+					<div class="info_label">Opacity</div>
+					<div class="info_value">
+						<input type="range" data-key="opacity" data-type="float" min="0" max="1" step="0.01" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Background Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="background"/>
+					</div>
+					
+				</div>
+			</div> <!-- Opacity End -->
+			
+			<!-- Quantize Filter -->
+			<div class="filter" id="fdef_quantize">
+				<div class="filter_content">
+					<div class="info_label">Colors</div>
+					<div class="info_value">
+						<input type="range" data-key="colors" data-type="int" min="2" max="256" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Dither Type</div>
+					<div class="info_value">
+						<select data-key="ditherType">
+							<option value="">None</option>
+							<option value="FloydSteinberg">Floyd/Steinberg</option>
+							<option value="Stucki">Stucki</option>
+							<option value="Atkinson">Atkinson</option>
+							<option value="Jarvis">Jarvis</option>
+							<option value="Burkes">Burkes</option>
+							<option value="Sierra">Sierra</option>
+						</select>
+					</div>
+				</div>
+			</div> <!-- Quantize End -->
+			
+			<!-- Quantize Fast Filter -->
+			<div class="filter" id="fdef_quantizeFast">
+				<div class="filter_content">
+					<div class="info_label">RGB Crush Levels</div>
+					<div class="info_value">
+						<input type="range" data-key="crushRGB" data-type="int" min="0" max="128" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Alpha Crush Levels</div>
+					<div class="info_value">
+						<input type="range" data-key="crushAlpha" data-type="int" min="0" max="128" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Options</div>
+					<div class="info_value">
+						<div><label><input type="checkbox" data-key="dither"><span>Dither</span></label></div>
+						<div><label><input type="checkbox" data-key="fallback"><span>Fallback</span></label></div>
+					</div>
+				</div>
+			</div> <!-- Quantize Fast End -->
+			
+			<!-- Trim Filter -->
+			<div class="filter" id="fdef_trim">
+				<div class="filter_content">
+					
+					<div class="info_label">Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="color"/>
+					</div>
+					
+					<div class="info_label">Tolerance</div>
+					<div class="info_value">
+						<input type="range" data-key="tolerance" data-type="int" min="0" max="255" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+				</div>
+			</div> <!-- Trim End -->
+			
+			<!-- Text Filter -->
+			<div class="filter" id="fdef_text">
+				<div class="filter_content">
+					
+					<div class="info_label">Text</div>
+					<div class="info_value">
+						<textarea data-key="text" data-type="string" style="resize:none;"></textarea>
+					</div>
+					
+					<div class="info_label">Font Family</div>
+					<div class="info_value">
+						<select data-key="font">
+							<option value="Arial">Arial</option>
+							<option value="Arial Black">Arial Black</option>
+							<option value="Arial Narrow">Arial Narrow</option>
+							<option value="Baskerville">Baskerville</option>
+							<option value="Brush Script MT">Brush Script MT</option>
+							<option value="Century Gothic">Century Gothic</option>
+							<option value="Copperplate">Copperplate</option>
+							<option value="Courier New">Courier New</option>
+							<option value="Garamond">Garamond</option>
+							<option value="Georgia">Georgia</option>
+							<option value="Gill Sans">Gill Sans</option>
+							<option value="Lucida Bright">Lucida Bright</option>
+							<option value="Palatino">Palatino</option>
+							<option value="Papyrus">Papyrus</option>
+							<option value="Tahoma">Tahoma</option>
+							<option value="Times New Roman">Times New Roman</option>
+							<option value="Trebuchet MS">Trebuchet MS</option>
+							<option value="Verdana">Verdana</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Font Style</div>
+					<div class="info_value">
+						<label><input type="checkbox" data-custom="bold"><span>Bold</span></label>
+						<label><input type="checkbox" data-custom="italic"><span>Italic</span></label>
+					</div>
+					
+					<div class="info_label">Text Size</div>
+					<div class="info_value">
+						<input type="range" data-key="size" data-type="int" min="1" max="255" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Text Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="color"/>
+					</div>
+					
+					<div class="info_label">Background Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="background"/>
+					</div>
+					
+					<div class="info_label">Gravity (Alignment)</div>
+					<div class="info_value">
+						<select data-key="gravity">
+							<option value="center">&bull; Center</option>
+							<option value="north">&uarr; North</option>
+							<option value="northeast">&nearr; Northeast</option>
+							<option value="east">&rarr; East</option>
+							<option value="southeast">&searr; Southeast</option>
+							<option value="south">&darr; South</option>
+							<option value="southwest">&swarr; Southwest</option>
+							<option value="west">&larr; West</option>
+							<option value="northwest">&nwarr; Northwest</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Character Spacing</div>
+					<div class="info_value">
+						<input type="range" data-key="characterSpacing" data-type="float" min="-20" max="20" step="0.01" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Line Spacing</div>
+					<div class="info_value">
+						<input type="range" data-key="lineSpacing" data-type="float" min="-20" max="20" step="0.01" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Margin</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="marginX" data-type="int" data-min="0" data-max="16383"/> x 
+						<input type="text" size="6" data-key="marginY" data-type="int" data-min="0" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Offset</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="offsetX" data-type="int" data-min="-16383" data-max="16383"/> x 
+						<input type="text" size="6" data-key="offsetY" data-type="int" data-min="-16383" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Max Render Size</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="maxWidth" data-type="int" data-min="0" data-max="16383"/> x 
+						<input type="text" size="6" data-key="maxHeight" data-type="int" data-min="0" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Text Overflow</div>
+					<div class="info_value">
+						<select data-key="overflow">
+							<option value="">None</option>
+							<option value="shrink">Auto-Shrink</option>
+							<option value="wrap">Word Wrap</option>
+							<option value="shrinkwrap">Shrink &amp; Wrap</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Auto-Crop</div>
+					<div class="info_value">
+						<select data-key="autoCrop">
+							<option value="">None</option>
+							<option value="horiz">Horizontal</option>
+							<option value="vert">Vertical</option>
+							<option value="both">Both</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Opacity</div>
+					<div class="info_value">
+						<input type="range" data-key="opacity" data-type="float" min="0" max="1" step="0.01" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Render Mode</div>
+					<div class="info_value">
+						<select data-key="mode">
+							<option value="source-over">Source Over</option>
+							<option value="source-in">Source In</option>
+							<option value="source-out">Source Out</option>
+							<option value="source-atop">Source Atop</option>
+							<option value="destination-over">Destination Over</option>
+							<option value="destination-in">Destination In</option>
+							<option value="destination-out">Destination Out</option>
+							<option value="destination-atop">Destination Atop</option>
+							<option value="lighter">Lighter</option>
+							<option value="copy">Copy</option>
+							<option value="xor">Exclusive Or</option>
+							<option value="multiply">Multiply</option>
+							<option value="screen">Screen</option>
+							<option value="overlay">Overlay</option>
+							<option value="darken">Darken</option>
+							<option value="lighten">Lighten</option>
+							<option value="color-dodge">Color Dodge</option>
+							<option value="color-burn">Color Burn</option>
+							<option value="hard-light">Hard Light</option>
+							<option value="soft-light">Soft Light</option>
+							<option value="difference">Difference</option>
+							<option value="exclusion">Exclusion</option>
+							<option value="hue">Hue</option>
+							<option value="saturation">Saturation</option>
+							<option value="color">Color</option>
+							<option value="luminosity">Luminosity</option>
+						</select>
+					</div>
+					
+					<div class="info_label">Shadow Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="shadowColor"/>
+					</div>
+					
+					<div class="info_label">Shadow Offset</div>
+					<div class="info_value">
+						<input type="text" size="6" data-key="shadowOffsetX" data-type="int" data-min="-16383" data-max="16383"/> x 
+						<input type="text" size="6" data-key="shadowOffsetY" data-type="int" data-min="-16383" data-max="16383"/> (pixels)
+					</div>
+					
+					<div class="info_label">Shadow Blur</div>
+					<div class="info_value">
+						<input type="range" data-key="shadowBlur" data-type="int" min="0" max="50" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Outline Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="outlineColor"/>
+					</div>
+					
+					<div class="info_label">Outline Thickness</div>
+					<div class="info_value">
+						<input type="range" data-key="outlineThickness" data-type="int" min="0" max="50" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Outline Style</div>
+					<div class="info_value">
+						<select data-key="outlineStyle">
+							<option value="round">Round</option>
+							<option value="bevel">Bevel</option>
+							<option value="miter">Miter</option>
+						</select>
+					</div>
+					
+				</div>
+			</div> <!-- Text End -->
+			
+		</div>
+		
+	</body>
+</html>
