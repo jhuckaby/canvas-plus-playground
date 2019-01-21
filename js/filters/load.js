@@ -13,6 +13,10 @@ app.filters.load = Class.create({
 		url: ''
 	},
 	
+	alwaysShowParams: {
+		image: true
+	},
+	
 	init: function() {
 		// populate DOM from params
 		var self = this;
