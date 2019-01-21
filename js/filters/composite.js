@@ -72,7 +72,7 @@ app.filters.composite = Class.create({
 	run: function(canvas, callback) {
 		// run filter async
 		var overlay = new CanvasPlus();
-		overlay.set('debug', true); // log to console.log
+		overlay.set('debug', !!overlay.browser); // log to console.log
 		
 		var cparams = copyHashRemoveKeys(this.params, { file: 1, url: 1 });
 		cparams.image = overlay;
@@ -211,7 +211,7 @@ app.filters.mask = Class.create({
 	run: function(canvas, callback) {
 		// run filter async
 		var overlay = new CanvasPlus();
-		overlay.set('debug', true); // log to console.log
+		overlay.set('debug', !!overlay.browser); // log to console.log
 		
 		var cparams = copyHashRemoveKeys(this.params, { file: 1, url: 1 });
 		cparams.image = overlay;
