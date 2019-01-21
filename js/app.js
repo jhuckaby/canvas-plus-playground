@@ -1003,7 +1003,7 @@ var app = {
 		var filename = "my_image." + fmt;
 		
 		var code = '';
-		code += "var CanvasPlus = require('canvas-plus');\n";
+		code += "var CanvasPlus = require('pixl-canvas-plus');\n";
 		code += "var canvas = new CanvasPlus();\n\n";
 		
 		// shift load action, as that is handled separately
