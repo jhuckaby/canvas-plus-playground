@@ -1,0 +1,29 @@
+{
+	"name": "canvas-plus-test",
+	"version": "0.0.1",
+	"description": "A simple test suite for canvas-plus.",
+	"author": "Joseph Huckaby <jhuckaby@gmail.com>",
+	"homepage": "https://github.com/jhuckaby/canvas-plus-playground/test",
+	"license": "MIT",
+	"main": "test.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jhuckaby/canvas-plus-playground/test"
+	},
+	"bugs": {
+		"url": "https://github.com/jhuckaby/canvas-plus-playground/issues"
+	},
+	"keywords": [
+		"canvas-plus",
+		"test"
+	],
+	"dependencies": {
+		"pixl-class": "^1.0.0",
+		"pixl-cli": "^1.0.0",
+		"pixl-unit": "^1.0.0",
+		"pixl-canvas-plus": "^2.0.0"
+	},
+	"scripts": {
+		"test": "pixl-unit test.js"
+	}
+}

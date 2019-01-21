@@ -1,0 +1,1432 @@
+[
+	{
+		"name": "Read/Write JPEG",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImtpdHRlbi5qcGcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=jpeg&q=90",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 23922,
+			"hash": "24fc3c72163e3c3a"
+		}
+	},
+	{
+		"name": "Read/Write PNG",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 891,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "JPEG to PNG",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImtpdHRlbi5qcGcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 149183,
+			"hash": "24fc3c72163e3c3a"
+		}
+	},
+	{
+		"name": "PNG to JPEG",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&f=jpeg&q=90",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 4020,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Resize Fit Best Quality",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 20282,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Resize Fit Good Quality",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCIsImFudGlhbGlhcyI6Imdvb2QifQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 13282,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Resize Fit Fast Quality",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCIsImFudGlhbGlhcyI6ImZhc3QifQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 5512,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Resize Fit Nearest Quality",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCIsImFudGlhbGlhcyI6Im5lYXJlc3QifQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 5512,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Resize FitPad Center",
+		"uri": "http://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjMyMCwibW9kZSI6ImZpdHBhZCIsImJhY2tncm91bmQiOiIjZmYwMDAwIn0%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 320,
+			"mode": "rgba",
+			"size": 20797,
+			"hash": "00ffdb81a1c7ff00"
+		}
+	},
+	{
+		"name": "Resize FitPad North",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjMyMCwibW9kZSI6ImZpdHBhZCIsImJhY2tncm91bmQiOiIjMDBmZjAwIiwiZ3Jhdml0eSI6Im5vcnRoIn0%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 320,
+			"mode": "rgba",
+			"size": 20705,
+			"hash": "e718e1a587a50000"
+		}
+	},
+	{
+		"name": "Resize FitPad South",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjMyMCwibW9kZSI6ImZpdHBhZCIsImJhY2tncm91bmQiOiIjMDAwMGZmIiwiZ3Jhdml0eSI6InNvdXRoIn0%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 320,
+			"mode": "rgba",
+			"size": 20829,
+			"hash": "0000e718e1a587a5"
+		}
+	},
+	{
+		"name": "Resize FitPad West",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjEwMCwibW9kZSI6ImZpdHBhZCIsImJhY2tncm91bmQiOiIjMDAwMDAwIiwiZ3Jhdml0eSI6Indlc3QifQ%3D%3D&f=png",
+		"ref": {
+			"width": 400,
+			"height": 100,
+			"mode": "rgba",
+			"size": 13546,
+			"hash": "e0e0e0e0e0e0e0e0"
+		}
+	},
+	{
+		"name": "Resize FitPad East",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjEwMCwibW9kZSI6ImZpdHBhZCIsImJhY2tncm91bmQiOiIjODg4ODg4IiwiZ3Jhdml0eSI6ImVhc3QifQ%3D%3D&f=png",
+		"ref": {
+			"width": 400,
+			"height": 100,
+			"mode": "rgba",
+			"size": 13639,
+			"hash": "fffaf8f8f8f9f9f9"
+		}
+	},
+	{
+		"name": "Resize FitOver Center",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjEwMCwibW9kZSI6ImZpdG92ZXIifQ%3D%3D&f=png",
+		"ref": {
+			"width": 400,
+			"height": 100,
+			"mode": "rgba",
+			"size": 10368,
+			"hash": "68e9eb8181bda53c"
+		}
+	},
+	{
+		"name": "Resize FitOver North",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjEwMCwibW9kZSI6ImZpdG92ZXIiLCJncmF2aXR5Ijoibm9ydGgifQ%3D%3D&f=png",
+		"ref": {
+			"width": 400,
+			"height": 100,
+			"mode": "rgba",
+			"size": 10006,
+			"hash": "e718a5a55a5ad1c3"
+		}
+	},
+	{
+		"name": "Resize FitOver South",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjEwMCwibW9kZSI6ImZpdG92ZXIiLCJncmF2aXR5Ijoic291dGgifQ%3D%3D&f=png",
+		"ref": {
+			"width": 400,
+			"height": 100,
+			"mode": "rgba",
+			"size": 11597,
+			"hash": "078f666681e724e7"
+		}
+	},
+	{
+		"name": "Resize FitOver West",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MjAwLCJoZWlnaHQiOjQwMCwibW9kZSI6ImZpdG92ZXIiLCJncmF2aXR5Ijoid2VzdCJ9&f=png",
+		"ref": {
+			"width": 200,
+			"height": 400,
+			"mode": "rgba",
+			"size": 14753,
+			"hash": "2b59dcd0f0f0462f"
+		}
+	},
+	{
+		"name": "Resize FitOver East",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MjAwLCJoZWlnaHQiOjQwMCwibW9kZSI6ImZpdG92ZXIiLCJncmF2aXR5IjoiZWFzdCJ9&f=png",
+		"ref": {
+			"width": 200,
+			"height": 400,
+			"mode": "rgba",
+			"size": 15372,
+			"hash": "d49a9b0b07e566d4"
+		}
+	},
+	{
+		"name": "Resize Scale",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6NDAwLCJoZWlnaHQiOjEwMCwibW9kZSI6InNjYWxlIn0%3D&f=png",
+		"ref": {
+			"width": 400,
+			"height": 100,
+			"mode": "rgba",
+			"size": 18020,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Resize Nearest Enlarge",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=resize/eyJ3aWR0aCI6MTI4LCJoZWlnaHQiOjEyOCwibW9kZSI6ImZpdCJ9&t=resize/eyJ3aWR0aCI6MjU2LCJoZWlnaHQiOjI1NiwibW9kZSI6ImZpdCIsImFudGlhbGlhcyI6Im5lYXJlc3QifQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 36610,
+			"hash": "e781e9e0d8c981e7"
+		}
+	},
+	{
+		"name": "JPEG 100%",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=jpeg&q=100",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 47311,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "JPEG 75%",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=jpeg&q=75",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 17636,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "JPEG 50%",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=jpeg&q=50",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 13267,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "JPEG 25%",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=jpeg&q=25",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 10040,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "JPEG 10%",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=jpeg&q=10",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 6629,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "PNG 24-bit",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 20282,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Alpha PNG 32-bit",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=resize/eyJ3aWR0aCI6MTI4LCJoZWlnaHQiOjEyOCwibW9kZSI6ImZpdCJ9&f=png",
+		"ref": {
+			"width": 128,
+			"height": 128,
+			"mode": "rgba",
+			"size": 28940,
+			"hash": "e781e9e0d8c981e7"
+		}
+	},
+	{
+		"name": "GIF (Opaque)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&f=gif",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "indexed",
+			"size": 18224,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "GIF (Transparent)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=resize/eyJ3aWR0aCI6MTI4LCJoZWlnaHQiOjEyOCwibW9kZSI6ImZpdCJ9&f=gif",
+		"ref": {
+			"width": 128,
+			"height": 128,
+			"mode": "indexed",
+			"size": 10144,
+			"hash": "e781f1e0d1c981e7"
+		}
+	},
+	{
+		"name": "Brightness Up",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJicmlnaHRuZXNzIjoxMjh9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 13095,
+			"hash": "e6c2e3c1819fc366"
+		}
+	},
+	{
+		"name": "Brightness Down",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJicmlnaHRuZXNzIjotMTI4fQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 14653,
+			"hash": "993cb9a1a18fa599"
+		}
+	},
+	{
+		"name": "Brightness Min",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJicmlnaHRuZXNzIjotMjU1fQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 884,
+			"hash": "0000000000000000"
+		}
+	},
+	{
+		"name": "Brightness Max",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJicmlnaHRuZXNzIjoyNTV9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 884,
+			"hash": "ffffffffffffffff"
+		}
+	},
+	{
+		"name": "Contrast Up",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJjb250cmFzdCI6MTI4fQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 15531,
+			"hash": "7e18e1e1a18f256e"
+		}
+	},
+	{
+		"name": "Contrast Down",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJjb250cmFzdCI6LTEyOH0%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 13921,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Contrast Min",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJjb250cmFzdCI6LTI1NX0%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 885,
+			"hash": "0000000000000000"
+		}
+	},
+	{
+		"name": "Contrast Max",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJjb250cmFzdCI6MjU1fQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 12906,
+			"hash": "7e18e1e1a18f247e"
+		}
+	},
+	{
+		"name": "Hue Shift Up",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJodWUiOjEyOH0%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 20706,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Hue Shift Down",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJodWUiOi0xMjh9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 20697,
+			"hash": "7e58e3c1819fa566"
+		}
+	},
+	{
+		"name": "Saturation Up",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJzYXR1cmF0aW9uIjoxMjh9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 21228,
+			"hash": "7e18e3c1819f2567"
+		}
+	},
+	{
+		"name": "Saturation Down",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJzYXR1cmF0aW9uIjotMTI4fQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 18442,
+			"hash": "665ac3e1819fe742"
+		}
+	},
+	{
+		"name": "Saturation Min",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJzYXR1cmF0aW9uIjotMjU1fQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 17366,
+			"hash": "665ad1a5819fe718"
+		}
+	},
+	{
+		"name": "Saturation Max",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJzYXR1cmF0aW9uIjoyNTV9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 21434,
+			"hash": "7e18e3c1819f2567"
+		}
+	},
+	{
+		"name": "Blur",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=blur/eyJhbW91bnQiOjEwfQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 42246,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Border Outside",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=border/eyJzaXplIjoyMCwibW9kZSI6Im91dHNpZGUifQ%3D%3D&f=png",
+		"ref": {
+			"width": 360,
+			"height": 280,
+			"mode": "rgba",
+			"size": 21275,
+			"hash": "00ffdbc081cfe724"
+		}
+	},
+	{
+		"name": "Border Inside",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=border/eyJzaXplIjoyMCwiY29sb3IiOiIjMDBmZjAwIn0%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 17064,
+			"hash": "247ee2e1819fe724"
+		}
+	},
+	{
+		"name": "Border Center",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=border/eyJzaXplIjoyMCwiY29sb3IiOiIjMDAwMGZmIiwibW9kZSI6ImNlbnRlciJ9&f=png",
+		"ref": {
+			"width": 340,
+			"height": 260,
+			"mode": "rgba",
+			"size": 20396,
+			"hash": "187ed3c181cfe724"
+		}
+	},
+	{
+		"name": "Composite",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=composite/e30%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 110475,
+			"hash": "f270f8e0e1c9a1e3"
+		}
+	},
+	{
+		"name": "Convolve",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=convolve/eyJtYXRyaXgiOlswLC0xLDAsLTEsNSwtMSwwLC0xLDBdfQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 26343,
+			"hash": "7e18e1e1819fa566"
+		}
+	},
+	{
+		"name": "Crop",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/e30%3D&t=resize/eyJ3aWR0aCI6MjU2LCJoZWlnaHQiOjI1NiwibW9kZSI6ImZpdCJ9&t=crop/eyJ4Ijo1OCwieSI6ODEsIndpZHRoIjoxNDAsImhlaWdodCI6MTQwfQ%3D%3D&f=png",
+		"ref": {
+			"width": 140,
+			"height": 140,
+			"mode": "rgba",
+			"size": 4224,
+			"hash": "0e6e607e2e667e18"
+		}
+	},
+	{
+		"name": "Curves (Baseline)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlswLDI1NV19&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 891,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Curves (Increase brightness)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOls2MywyNTVdfQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 947,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Curves (Decrease brightness)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlswLDEyN119&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 894,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Curves (Increase contrast)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlswLDAsMjU1LDI1NV19&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1042,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Curves (Decrease contrast)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOls2MywxOTFdfQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 904,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Curves (Increase mid-tones)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlswLDE5MSwyNTVdfQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1061,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Curves (Decrease mid-tones)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlswLDYzLDI1NV19&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1042,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Curves (Increase shadow detail)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlswLDk2LDE2MCwyMTYsMjU1XX0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1043,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Curves (Invert image)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlsyNTUsMF19&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 888,
+			"hash": "f0f0f0f0f0f0f0f0"
+		}
+	},
+	{
+		"name": "Curves (Solarize effect)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlswLDEyNywwXX0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1095,
+			"hash": "3c3c3c3c3c3c3c3c"
+		}
+	},
+	{
+		"name": "Curves (Alice in Wonderland)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=curves/eyJwb2ludHMiOlswLDI1NSwwLDI1NV19&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1219,
+			"hash": "7171717171717171"
+		}
+	},
+	{
+		"name": "Desaturate",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=desaturate/e30%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 955,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Emboss",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=emboss/e30%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 26404,
+			"hash": "5ab4acb8ca72be30"
+		}
+	},
+	{
+		"name": "Expand (Transparent)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=expand/eyJ3aWR0aCI6NTAsImhlaWdodCI6NTAsImJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDApIiwiZ3Jhdml0eSI6ImNlbnRlciJ9&f=png",
+		"ref": {
+			"width": 306,
+			"height": 306,
+			"mode": "rgba",
+			"size": 1035,
+			"hash": "9f038f83878701bf"
+		}
+	},
+	{
+		"name": "Expand (Color)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=expand/eyJ3aWR0aCI6NTAsImhlaWdodCI6NTAsImJhY2tncm91bmQiOiIjZmYwMGZmIiwiZ3Jhdml0eSI6ImNlbnRlciJ9&f=png",
+		"ref": {
+			"width": 306,
+			"height": 306,
+			"mode": "rgba",
+			"size": 1150,
+			"hash": "8f078f83878701bf"
+		}
+	},
+	{
+		"name": "Find Edges",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=findEdges/e30%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 18308,
+			"hash": "bda0d2d17c38a1e5"
+		}
+	},
+	{
+		"name": "Flatten (Transparent)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/e30%3D&t=resize/eyJ3aWR0aCI6MjU2LCJoZWlnaHQiOjI1NiwibW9kZSI6ImZpdCJ9&t=flatten/eyJiYWNrZ3JvdW5kIjoiIn0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 8904,
+			"hash": "007e3c3c3c3c3c3c"
+		}
+	},
+	{
+		"name": "Flatten (White)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/e30%3D&t=resize/eyJ3aWR0aCI6MjU2LCJoZWlnaHQiOjI1NiwibW9kZSI6ImZpdCJ9&t=flatten/eyJiYWNrZ3JvdW5kIjoiI2ZmZmZmZiJ9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 10333,
+			"hash": "83d381bd9d858bc3"
+		}
+	},
+	{
+		"name": "Gamma 0.25",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=gamma/eyJhbW91bnQiOjAuMjV9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1110,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Gamma 1.0 (Baseline)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=gamma/e30%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 891,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Gamma 2.2",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=gamma/eyJhbW91bnQiOjIuMn0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1068,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Gamma 4.0",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=gamma/eyJhbW91bnQiOjR9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1086,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Gamma (Single Channel)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=gamma/eyJhbW91bnQiOjAuMjUsImNoYW5uZWxzIjoiciJ9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 971,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Gaussian Blur",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=gaussianBlur/eyJhbW91bnQiOjZ9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 38635,
+			"hash": "7e18e3c1819fa566"
+		}
+	},
+	{
+		"name": "Invert",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=invert/e30%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 888,
+			"hash": "f0f0f0f0f0f0f0f0"
+		}
+	},
+	{
+		"name": "Invert (Single Channel)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=invert/eyJjaGFubmVscyI6InIifQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 888,
+			"hash": "0f0ff0f00f0f0f0f"
+		}
+	},
+	{
+		"name": "Invert (Alpha)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYmEtcmFtcC5wbmcifQ%3D%3D&t=invert/eyJjaGFubmVscyI6ImEifQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 12608,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Mask",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=mask/e30%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 29898,
+			"hash": "c3c3e3c181cfc3c3"
+		}
+	},
+	{
+		"name": "Normalize",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImtpdHRlbi5qcGcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=adjust/eyJjb250cmFzdCI6LTEyOH0%3D&t=normalize/e30%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 112937,
+			"hash": "24fc3c72163e3c3a"
+		}
+	},
+	{
+		"name": "Opacity (Baseline)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRyZWUucG5nIn0%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=opacity/e30%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 200,
+			"mode": "rgba",
+			"size": 60238,
+			"hash": "e3c1c3c38787e7e3"
+		}
+	},
+	{
+		"name": "Opacity (Half)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRyZWUucG5nIn0%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=opacity/eyJvcGFjaXR5IjowLjV9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 200,
+			"mode": "rgba",
+			"size": 58817,
+			"hash": "e3c1c3c38787e7e3"
+		}
+	},
+	{
+		"name": "Opacity (None)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRyZWUucG5nIn0%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=opacity/eyJvcGFjaXR5IjowfQ%3D%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 200,
+			"mode": "rgba",
+			"size": 345,
+			"hash": "ffffffffffffffff"
+		}
+	},
+	{
+		"name": "Posterize (4 Levels)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=posterize/e30%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 943,
+			"hash": "0707070707070707"
+		}
+	},
+	{
+		"name": "Posterize (8 Levels)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=posterize/eyJsZXZlbHMiOjh9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 932,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Quantize (32 Colors Dither)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=quantize/eyJjb2xvcnMiOjMyLCJkaXRoZXIiOnRydWV9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "indexed",
+			"size": 17200,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Quantize (32 Colors Flat)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=quantize/eyJjb2xvcnMiOjMyLCJkaXRoZXIiOmZhbHNlLCJkaXRoZXJUeXBlIjoiIn0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "indexed",
+			"size": 3968,
+			"hash": "0f0f07070f0f0707"
+		}
+	},
+	{
+		"name": "Quantize (8 Colors Alpha)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=quantize/eyJjb2xvcnMiOjgsImRpdGhlciI6dHJ1ZX0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "indexed",
+			"size": 10325,
+			"hash": "e781e9e0d1c981e7"
+		}
+	},
+	{
+		"name": "Quantize Fast (6 Levels Dither)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=quantizeFast/eyJjcnVzaFJHQiI6NiwiY3J1c2hBbHBoYSI6NiwiZGl0aGVyIjp0cnVlfQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "indexed",
+			"size": 22237,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Quantize Fast (6 Levels Flat)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=quantizeFast/eyJjcnVzaFJHQiI6NiwiY3J1c2hBbHBoYSI6NiwiZGl0aGVyIjpmYWxzZX0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "indexed",
+			"size": 3017,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Quantize Fast (Alpha Dither)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYmEtcmFtcC5wbmcifQ%3D%3D&t=quantizeFast/eyJjcnVzaFJHQiI6NiwiY3J1c2hBbHBoYSI6NiwiZGl0aGVyIjp0cnVlfQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "indexed",
+			"size": 34509,
+			"hash": "071f00ff00ff00ff"
+		}
+	},
+	{
+		"name": "Quantize Fast (1 Level)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=quantizeFast/eyJjcnVzaFJHQiI6MSwiY3J1c2hBbHBoYSI6MSwiZGl0aGVyIjp0cnVlfQ%3D%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "indexed",
+			"size": 10127,
+			"hash": "e781e1e1d1c981e7"
+		}
+	},
+	{
+		"name": "Sepia Tone",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=sepia/e30%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 1218,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Sharpen",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=sharpen/e30%3D&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 26343,
+			"hash": "7e18e1e1819fa566"
+		}
+	},
+	{
+		"name": "Solarize",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=solarize/e30%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 901,
+			"hash": "3c3c3c3c3c3c3c3c"
+		}
+	},
+	{
+		"name": "Color Temperature (Warm)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=temperature/eyJhbW91bnQiOjEyOH0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 897,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Color Temperature (Cool)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=temperature/eyJhbW91bnQiOi0xMjh9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 899,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Text (Basic)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MjgwLCJoZWlnaHQiOjMyLCJiYWNrZ3JvdW5kIjoiI2ZmZmZmZiJ9&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4uIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTQsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJjZW50ZXIiLCJvdmVyZmxvdyI6IiJ9&f=png",
+		"ref": {
+			"width": 280,
+			"height": 32,
+			"mode": "rgba",
+			"size": 3952,
+			"hash": "fffff70181ebfbff"
+		}
+	},
+	{
+		"name": "Text (Transparent Background)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MjgwLCJoZWlnaHQiOjMyfQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4uIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTQsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJjZW50ZXIiLCJvdmVyZmxvdyI6IiJ9&f=png",
+		"ref": {
+			"width": 280,
+			"height": 32,
+			"mode": "rgba",
+			"size": 2352,
+			"hash": "fffff70181ebfbff"
+		}
+	},
+	{
+		"name": "Text (Shrink)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MjgwLCJoZWlnaHQiOjMyLCJiYWNrZ3JvdW5kIjoiI2ZmZmZmZiJ9&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTQsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJjZW50ZXIiLCJtYXJnaW5YIjoxMH0%3D&f=png",
+		"ref": {
+			"width": 280,
+			"height": 32,
+			"mode": "rgba",
+			"size": 3850,
+			"hash": "ffffff0000ffffff"
+		}
+	},
+	{
+		"name": "Text (Wrap)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MjAwLCJoZWlnaHQiOjIwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuICBUaGUgcXVpY2sgYnJvd24gZm94IGp1bXBzIG92ZXIgdGhlIGxhenkgZG9nLiAgR3J1bXB5IFdpemFyZHMgbWFrZSB0b3hpYyBicmV3IGZvciB0aGUgRXZpbCBRdWVlbiBhbmQgSmFjay4gIExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4iLCJmb250IjoiQXJpYWwiLCJzaXplIjoxNCwiY29sb3IiOiIjMDAwMDAwIiwiZ3Jhdml0eSI6Im5vcnRod2VzdCIsIm92ZXJmbG93Ijoid3JhcCIsIm1hcmdpblgiOjEwLCJtYXJnaW5ZIjoxMH0%3D&f=png",
+		"ref": {
+			"width": 200,
+			"height": 200,
+			"mode": "rgba",
+			"size": 27099,
+			"hash": "85b5df0183978787"
+		}
+	},
+	{
+		"name": "Text (Shrink Wrap)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MjAwLCJoZWlnaHQiOjIwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuICBUaGUgcXVpY2sgYnJvd24gZm94IGp1bXBzIG92ZXIgdGhlIGxhenkgZG9nLiAgR3J1bXB5IFdpemFyZHMgbWFrZSB0b3hpYyBicmV3IGZvciB0aGUgRXZpbCBRdWVlbiBhbmQgSmFjay4gIExvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNpY2luZyBlbGl0LCBzZWQgZG8gZWl1c21vZCB0ZW1wb3IgaW5jaWRpZHVudCB1dCBsYWJvcmUgZXQgZG9sb3JlIG1hZ25hIGFsaXF1YS4iLCJmb250IjoiQXJpYWwiLCJzaXplIjoxOCwiY29sb3IiOiIjMDAwMDAwIiwiZ3Jhdml0eSI6Im5vcnRod2VzdCIsIm92ZXJmbG93Ijoic2hyaW5rd3JhcCIsIm1hcmdpblgiOjEwLCJtYXJnaW5ZIjoxMH0%3D&f=png",
+		"ref": {
+			"width": 200,
+			"height": 200,
+			"mode": "rgba",
+			"size": 27724,
+			"hash": "db81a38bc3c9819f"
+		}
+	},
+	{
+		"name": "Text (Outline)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImtpdHRlbi5qcGcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=text/eyJ0ZXh0IjoiQ09PTCBLSVRURU4gQlJPIiwiZm9udCI6IkFyaWFsIE5hcnJvdyIsImZvbnRXZWlnaHQiOiJib2xkIiwic2l6ZSI6NDgsImNvbG9yIjoiI2ZmZmZmZiIsImdyYXZpdHkiOiJzb3V0aCIsIm1hcmdpblgiOjEwLCJtYXJnaW5ZIjoxMCwib3V0bGluZUNvbG9yIjoiIzAwMDAwMCIsIm91dGxpbmVUaGlja25lc3MiOjR9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 240,
+			"mode": "rgba",
+			"size": 147365,
+			"hash": "24fc3c72163e1c3e"
+		}
+	},
+	{
+		"name": "Text (Wide Character Spacing)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTgsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJub3J0aHdlc3QiLCJvdmVyZmxvdyI6IndyYXAiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTAsImNoYXJhY3RlclNwYWNpbmciOjN9&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 11083,
+			"hash": "ff017f017f0100ff"
+		}
+	},
+	{
+		"name": "Text (Narrow Character Spacing)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTgsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJub3J0aHdlc3QiLCJvdmVyZmxvdyI6IndyYXAiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTAsImNoYXJhY3RlclNwYWNpbmciOi0xfQ%3D%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 10247,
+			"hash": "ff00f30301ffffff"
+		}
+	},
+	{
+		"name": "Text (Tall Line Height)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTgsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJub3J0aHdlc3QiLCJvdmVyZmxvdyI6InNocmlua3dyYXAiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTAsImxpbmVTcGFjaW5nIjoxMH0%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 10061,
+			"hash": "ff0000ff01fdffff"
+		}
+	},
+	{
+		"name": "Text (Short Line Height)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTgsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJub3J0aHdlc3QiLCJvdmVyZmxvdyI6IndyYXAiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTAsImxpbmVTcGFjaW5nIjotNX0%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 10529,
+			"hash": "ff00f3033f1fffff"
+		}
+	},
+	{
+		"name": "Text (Align Northwest)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5Ijoibm9ydGh3ZXN0Iiwib3ZlcmZsb3ciOiIiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTB9&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3347,
+			"hash": "ff0f0fffffffffff"
+		}
+	},
+	{
+		"name": "Text (Align North)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5Ijoibm9ydGgiLCJvdmVyZmxvdyI6IiIsIm1hcmdpblgiOjEwLCJtYXJnaW5ZIjoxMH0%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3249,
+			"hash": "ffc3c3ffffffffff"
+		}
+	},
+	{
+		"name": "Text (Align Northeast)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5Ijoibm9ydGhlYXN0Iiwib3ZlcmZsb3ciOiIiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTB9&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3240,
+			"hash": "fff0f0ffffffffff"
+		}
+	},
+	{
+		"name": "Text (Align East)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5IjoiZWFzdCIsIm92ZXJmbG93IjoiIiwibWFyZ2luWCI6MTAsIm1hcmdpblkiOjEwfQ%3D%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3082,
+			"hash": "fffffff0f0ffffff"
+		}
+	},
+	{
+		"name": "Text (Align Southeast)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5Ijoic291dGhlYXN0Iiwib3ZlcmZsb3ciOiIiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTB9&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3134,
+			"hash": "fffffffffff0f0ff"
+		}
+	},
+	{
+		"name": "Text (Align South)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5Ijoic291dGgiLCJvdmVyZmxvdyI6IiIsIm1hcmdpblgiOjEwLCJtYXJnaW5ZIjoxMH0%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3121,
+			"hash": "ffffffffffc3c3ff"
+		}
+	},
+	{
+		"name": "Text (Align Southwest)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5Ijoic291dGh3ZXN0Iiwib3ZlcmZsb3ciOiIiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTB9&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3101,
+			"hash": "ffffffffff0f0fff"
+		}
+	},
+	{
+		"name": "Text (Align West)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5Ijoid2VzdCIsIm92ZXJmbG93IjoiIiwibWFyZ2luWCI6MTAsIm1hcmdpblkiOjEwfQ%3D%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3106,
+			"hash": "ffffff0f0fffffff"
+		}
+	},
+	{
+		"name": "Text (Align Center)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lLiIsImZvbnQiOiJBcmlhbCIsInNpemUiOjE4LCJjb2xvciI6IiMwMDAwMDAiLCJncmF2aXR5IjoiY2VudGVyIiwib3ZlcmZsb3ciOiIiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTB9&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 3111,
+			"hash": "ffffffc3c3ffffff"
+		}
+	},
+	{
+		"name": "Text (Color)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTgsImNvbG9yIjoiI2ZmMDAwMCIsImdyYXZpdHkiOiJub3J0aHdlc3QiLCJvdmVyZmxvdyI6IndyYXAiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTB9&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 7983,
+			"hash": "ff00f303033f1fff"
+		}
+	},
+	{
+		"name": "Text (Background Color)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTgsImNvbG9yIjoiI2ZmMDAwMCIsImJhY2tncm91bmQiOiIjZmZmZjAwIiwiZ3Jhdml0eSI6Im5vcnRod2VzdCIsIm92ZXJmbG93Ijoid3JhcCIsIm1hcmdpblgiOjEwLCJtYXJnaW5ZIjoxMH0%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 6855,
+			"hash": "ff00f18383bf00ff"
+		}
+	},
+	{
+		"name": "Text (Opacity)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTgsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJub3J0aHdlc3QiLCJvdmVyZmxvdyI6IndyYXAiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTAsIm9wYWNpdHkiOjAuNX0%3D&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 10164,
+			"hash": "ff00f303033f1fff"
+		}
+	},
+	{
+		"name": "Text (Shadow)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=create/eyJ3aWR0aCI6MzAwLCJoZWlnaHQiOjEwMCwiYmFja2dyb3VuZCI6IiNmZmZmZmYifQ%3D%3D&t=text/eyJ0ZXh0IjoiTm93IGlzIHRoZSB0aW1lIGZvciBhbGwgZ29vZCBtZW4gdG8gY29tZSB0byB0aGUgYWlkIG9mIHRoZWlyIGNvdW50cnkuIiwiZm9udCI6IkFyaWFsIiwic2l6ZSI6MTgsImNvbG9yIjoiIzAwMDAwMCIsImdyYXZpdHkiOiJub3J0aHdlc3QiLCJvdmVyZmxvdyI6IndyYXAiLCJtYXJnaW5YIjoxMCwibWFyZ2luWSI6MTAsInNoYWRvd0NvbG9yIjoiIzAwMDAwMCIsInNoYWRvd09mZnNldFgiOjIsInNoYWRvd09mZnNldFkiOjIsInNoYWRvd0JsdXIiOjV9&f=png",
+		"ref": {
+			"width": 300,
+			"height": 100,
+			"mode": "rgba",
+			"size": 18265,
+			"hash": "ff00f183033f1fbf"
+		}
+	},
+	{
+		"name": "Threshold (Color)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InJnYi1yYW1wLnBuZyJ9&t=threshold/e30%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 897,
+			"hash": "0f0f0f0f0f0f0f0f"
+		}
+	},
+	{
+		"name": "Threshold (Black & White)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRyZWUucG5nIn0%3D&t=resize/eyJ3aWR0aCI6MzIwLCJoZWlnaHQiOjI0MCwibW9kZSI6ImZpdCJ9&t=desaturate/e30%3D&t=threshold/e30%3D&t=flatten/eyJiYWNrZ3JvdW5kIjoiIzg4ODg4OCJ9&f=png",
+		"ref": {
+			"width": 320,
+			"height": 200,
+			"mode": "rgba",
+			"size": 19833,
+			"hash": "e7c3c3c38787e7e7"
+		}
+	},
+	{
+		"name": "Rotate 45 (Expand)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MTYwLCJoZWlnaHQiOjEyMCwibW9kZSI6ImZpdCJ9&t=transform/eyJyb3RhdGUiOjQ1fQ%3D%3D&f=png",
+		"ref": {
+			"width": 198,
+			"height": 198,
+			"mode": "rgba",
+			"size": 32827,
+			"hash": "c783c387c1cbc1e3"
+		}
+	},
+	{
+		"name": "Rotate 45 (Fixed)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MTYwLCJoZWlnaHQiOjEyMCwibW9kZSI6ImZpdCJ9&t=transform/eyJyb3RhdGUiOjQ1LCJmaXhlZCI6dHJ1ZX0%3D&f=png",
+		"ref": {
+			"width": 160,
+			"height": 120,
+			"mode": "rgba",
+			"size": 24797,
+			"hash": "878b8787c1d3c1e9"
+		}
+	},
+	{
+		"name": "Rotate 45 (Color)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6InRlc3QtcGF0dGVybi5wbmcifQ%3D%3D&t=resize/eyJ3aWR0aCI6MTYwLCJoZWlnaHQiOjEyMCwibW9kZSI6ImZpdCJ9&t=transform/eyJyb3RhdGUiOjQ1LCJiYWNrZ3JvdW5kIjoiIzAwODgwMCJ9&f=png",
+		"ref": {
+			"width": 198,
+			"height": 198,
+			"mode": "rgba",
+			"size": 32641,
+			"hash": "387c5cc6533a3e1c"
+		}
+	},
+	{
+		"name": "Rotate 45 Nearest",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=transform/eyJhbnRpYWxpYXMiOiJuZWFyZXN0Iiwicm90YXRlIjo0NSwiZml4ZWQiOnRydWV9&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 108237,
+			"hash": "e3a1f988d4d181e7"
+		}
+	},
+	{
+		"name": "Flip Horizontal",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=transform/eyJmbGlwaCI6dHJ1ZX0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 104225,
+			"hash": "e78197071b9381e7"
+		}
+	},
+	{
+		"name": "Flip Vertical",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=transform/eyJmbGlwdiI6dHJ1ZX0%3D&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 104084,
+			"hash": "e781c9d8e0e981e7"
+		}
+	},
+	{
+		"name": "Matrix 3x3",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=transform/eyJtYXRyaXgiOlsxLDAsMSwxLDAsMF19&f=png",
+		"ref": {
+			"width": 256,
+			"height": 256,
+			"mode": "rgba",
+			"size": 88240,
+			"hash": "1f07a3d1e8f0e0f8"
+		}
+	},
+	{
+		"name": "Trim Edges",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=trim/eyJ0b2xlcmFuY2UiOjB9&f=png",
+		"ref": {
+			"width": 239,
+			"height": 239,
+			"mode": "rgba",
+			"size": 103995,
+			"hash": "e3a1f8d0d8d8c1e3"
+		}
+	},
+	{
+		"name": "Trim Edges (Tolerance 50)",
+		"uri": "https://jhuckaby.github.io/canvas-plus-playground/?t=load/eyJpbWFnZSI6ImVhcnRoLWJhbGwucG5nIn0%3D&t=trim/eyJ0b2xlcmFuY2UiOjUwfQ%3D%3D&f=png",
+		"ref": {
+			"width": 229,
+			"height": 229,
+			"mode": "rgba",
+			"size": 103097,
+			"hash": "c3a9f8d0d8d8c1e3"
+		}
+	}
+]
