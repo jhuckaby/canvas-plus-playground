@@ -13,6 +13,12 @@ app.filters.border = Class.create({
 		mode: "inside"
 	},
 	
+	alwaysShowParams: {
+		size: true,
+		color: true,
+		mode: true
+	},
+	
 	init: function() {
 		// populate DOM from params
 		var self = this;
