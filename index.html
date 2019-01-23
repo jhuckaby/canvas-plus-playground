@@ -1018,7 +1018,7 @@
 			<!-- Quantize Filter -->
 			<div class="filter" id="fdef_quantize">
 				<div class="filter_content">
-					<div class="info_label">Colors</div>
+					<div class="info_label">Target Colors</div>
 					<div class="info_value">
 						<input type="range" data-key="colors" data-type="int" min="2" max="256" step="1" value="0"/>
 						<input type="text" class="range"/>
@@ -1042,13 +1042,19 @@
 			<!-- Quantize Fast Filter -->
 			<div class="filter" id="fdef_quantizeFast">
 				<div class="filter_content">
-					<div class="info_label">RGB Crush Levels</div>
+					<div class="info_label">Target Colors</div>
+					<div class="info_value">
+						<input type="range" data-key="colors" data-type="int" min="2" max="256" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">RGB Posterize Levels</div>
 					<div class="info_value">
 						<input type="range" data-key="crushRGB" data-type="int" min="0" max="128" step="1" value="0"/>
 						<input type="text" class="range"/>
 					</div>
 					
-					<div class="info_label">Alpha Crush Levels</div>
+					<div class="info_label">Alpha Posterize Levels</div>
 					<div class="info_value">
 						<input type="range" data-key="crushAlpha" data-type="int" min="0" max="128" step="1" value="0"/>
 						<input type="text" class="range"/>
@@ -1056,8 +1062,7 @@
 					
 					<div class="info_label">Options</div>
 					<div class="info_value">
-						<div><label><input type="checkbox" data-key="dither"><span>Dither</span></label></div>
-						<div><label><input type="checkbox" data-key="fallback"><span>Fallback</span></label></div>
+						<div><label><input type="checkbox" data-key="dither"><span>Pattern Dither</span></label></div>
 					</div>
 				</div>
 			</div> <!-- Quantize Fast End -->

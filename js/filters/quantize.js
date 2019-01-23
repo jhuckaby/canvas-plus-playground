@@ -54,22 +54,23 @@ app.filters.quantizeFast = Class.create({
 	title: "Quantize Fast",
 	
 	defaultParams: {
-		crushRGB: 6,
-		crushAlpha: 6,
-		dither: true,
-		fallback: false
+		colors: 256,
+		crushRGB: 16,
+		crushAlpha: 16,
+		dither: true
 	},
 	
 	alwaysShowParams: {
+		colors: true,
 		crushRGB: true,
-		crushAlpha: true,
-		dither: true
+		crushAlpha: true
 	},
 	
 	init: function() {
 		// populate DOM from params
 		var self = this;
 		
+		this.$lookup('colors').val( this.params.colors );
 		this.$lookup('crushRGB').val( this.params.crushRGB );
 		this.$lookup('crushAlpha').val( this.params.crushAlpha );
 		this.$lookup('dither').prop('checked', this.params.dither );
