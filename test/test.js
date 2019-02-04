@@ -258,7 +258,7 @@ app.refreshImage = function(test, data) {
 					// file size needs to be within +/- N%
 					var pct = Math.round( (ref.size / data.ref.size) * 100 );
 					var pct_diff = Math.abs( 100 - pct );
-					test.ok( pct_diff <= SIZE_PCT_MAX, "File size difference is outside acceptable range (" + pct_diff + ")", { size: ref.size, ref: data.ref.size } );
+					test.ok( pct_diff <= SIZE_PCT_MAX, "File size difference is outside acceptable range (" + pct_diff + "%)", { size: ref.size, ref: data.ref.size } );
 					
 					// hash distance needs to be within N
 					var hdiff = self.canvas.hammingDistance( ref.hash, data.ref.hash );
