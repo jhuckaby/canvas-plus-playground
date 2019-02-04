@@ -398,6 +398,7 @@ var app = {
 		// rebuild image from filters
 		this.canvas = new CanvasPlus();
 		this.canvas.set('debug', true); // log to console.log
+		// this.canvas.set('useDataURLs', true);
 		
 		// block user input and show wait cursor
 		$('#progress_overlay').addClass('active');
