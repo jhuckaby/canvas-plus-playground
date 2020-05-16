@@ -25,6 +25,7 @@
 		<script src="js/filters/convolve.js"></script>
 		<script src="js/filters/crop.js"></script>
 		<script src="js/filters/curves.js"></script>
+		<script src="js/filters/draw.js"></script>
 		<script src="js/filters/expand.js"></script>
 		<script src="js/filters/flatten.js"></script>
 		<script src="js/filters/quantize.js"></script>
@@ -380,6 +381,57 @@
 					</div>
 				</div>
 			</div> <!-- Transform End -->
+			
+			<!-- Draw Filter -->
+			<div class="filter" id="fdef_draw">
+				<div class="filter_content">
+					<div class="info_label">Draw Primitive</div>
+					<div class="info_value">
+						<select data-custom="mode">
+							<option value="line">Line</option>
+							<option value="rect">Rectangle</option>
+						</select>
+					</div>
+					
+					<div class="filter_group" data-group="line">
+						<div class="info_label">Starting Point</div>
+						<div class="info_value">
+							X:<input type="text" size="5" data-key="x1" data-type="int" data-min="0" data-max="16383"/> &nbsp; 
+							Y:<input type="text" size="5" data-key="y1" data-type="int" data-min="0" data-max="16383"/>
+						</div>
+						
+						<div class="info_label">Ending Point</div>
+						<div class="info_value">
+							X:<input type="text" size="5" data-key="x2" data-type="int" data-min="1" data-max="16383"/> &nbsp; 
+							Y:<input type="text" size="5" data-key="y2" data-type="int" data-min="1" data-max="16383"/>
+						</div>
+					</div>
+					
+					<div class="filter_group" data-group="rect">
+						<div class="info_label">Position (Top-Left)</div>
+						<div class="info_value">
+							X:<input type="text" size="5" data-key="x" data-type="int" data-min="0" data-max="16383"/> &nbsp; 
+							Y:<input type="text" size="5" data-key="y" data-type="int" data-min="0" data-max="16383"/>
+						</div>
+						
+						<div class="info_label">Size (Width / Height)</div>
+						<div class="info_value">
+							W:<input type="text" size="5" data-key="width" data-type="int" data-min="1" data-max="16383"/> &nbsp; 
+							H:<input type="text" size="5" data-key="height" data-type="int" data-min="1" data-max="16383"/>
+						</div>
+					</div>
+					
+					<div class="info_label">Fill Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="fill"/>
+					</div>
+					
+					<div class="info_label">Stroke Color</div>
+					<div class="info_value">
+						<input type="text" class="color" data-type="color" data-key="stroke"/>
+					</div>
+				</div>
+			</div> <!-- Draw End -->
 			
 			<!-- Adjust Filter -->
 			<div class="filter" id="fdef_adjust">
