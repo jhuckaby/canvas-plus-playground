@@ -12,7 +12,7 @@ app.filters.transform = Class.create({
 		fliph: false,
 		flipv: false,
 		matrix: false,
-		antialias: "best",
+		antialias: "good",
 		background: "",
 		fixed: false
 	},

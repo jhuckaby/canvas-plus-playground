@@ -16,7 +16,7 @@ app.filters.resize = Class.create({
 		gravity: "center",
 		offsetX: 0,
 		offsetY: 0,
-		antialias: "best"
+		antialias: "good"
 	},
 	
 	alwaysShowParams: {

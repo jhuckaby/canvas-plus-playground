@@ -20,7 +20,7 @@ app.filters.composite = Class.create({
 		offsetY: 0,
 		opacity: 1,
 		mode: "source-over",
-		antialias: "best"
+		antialias: "good"
 	},
 	
 	init: function() {
@@ -160,7 +160,7 @@ app.filters.mask = Class.create({
 		offsetX: 0,
 		offsetY: 0,
 		opacity: 1,
-		antialias: "best"
+		antialias: "good"
 	},
 	
 	init: function() {
