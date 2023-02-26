@@ -12,7 +12,8 @@ app.filters.draw = Class.create({
 		x1: 0, y1: 0, x2: 0, y2: 0,
 		x: 0, y: 0, width: 0, height: 0,
 		fill: '#888888',
-		stroke: '#000000'
+		stroke: '#000000',
+		antialias: "good"
 	},
 	
 	init: function() {
@@ -47,6 +48,7 @@ app.filters.draw = Class.create({
 		
 		this.$lookup('fill').val( this.params.fill );
 		this.$lookup('stroke').val( this.params.stroke );
+		this.$lookup('antialias').val( this.params.antialias );
 	},
 	
 	update: function() {
@@ -71,6 +73,7 @@ app.filters.draw = Class.create({
 		
 		if (this.params.fill) opts.fill = this.params.fill;
 		if (this.params.stroke) opts.stroke = this.params.stroke;
+		if (this.params.antialias) opts.antialias = this.params.antialias;
 		
 		var result = canvas.draw(opts);
 		if (result.isError) {
@@ -95,6 +98,7 @@ app.filters.draw = Class.create({
 		
 		if (this.params.fill) opts.fill = this.params.fill;
 		if (this.params.stroke) opts.stroke = this.params.stroke;
+		if (this.params.antialias) opts.antialias = this.params.antialias;
 		
 		return opts;
 	}
