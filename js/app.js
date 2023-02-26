@@ -291,13 +291,13 @@ var app = {
 		// output format
 		$('#fe_output_format').val( doc.format ).on('change', function() {
 			doc.format = $(this).val();
-			if (doc.format == 'jpeg') $('#grp_output_jpeg_quality').show();
-			else $('#grp_output_jpeg_quality').hide();
+			if ((doc.format == 'jpeg') || (doc.format == 'webp')) $('#grp_output_quality').show();
+			else $('#grp_output_quality').hide();
 			self.refreshImage();
 		}).trigger('change');
 		
 		// output quality
-		$('#fe_jpeg_quality').val( doc.quality ).on('change', function() {
+		$('#fe_output_quality').val( doc.quality ).on('change', function() {
 			doc.quality = parseInt( $(this).val() );
 			self.refreshImage();
 		});
