@@ -20,6 +20,8 @@
 		<script src="js/filters/resize.js"></script>
 		<script src="js/filters/transform.js"></script>
 		<script src="js/filters/adjust.js"></script>
+		<script src="js/filters/lighting.js"></script>
+		<script src="js/filters/exposure.js"></script>
 		<script src="js/filters/border.js"></script>
 		<script src="js/filters/composite.js"></script>
 		<script src="js/filters/convolve.js"></script>
@@ -472,6 +474,34 @@
 					</div>
 				</div>
 			</div> <!-- Adjust End -->
+			
+			<!-- Lighting Filter -->
+			<div class="filter" id="fdef_lighting">
+				<div class="filter_content">
+					<div class="info_label">Shadow Detail</div>
+					<div class="info_value">
+						<input type="range" data-key="shadows" data-type="int" min="-100" max="100" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+					
+					<div class="info_label">Highlight Detail</div>
+					<div class="info_value">
+						<input type="range" data-key="highlights" data-type="int" min="-100" max="100" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+				</div>
+			</div> <!-- Lighting End -->
+			
+			<!-- Exposure Filter -->
+			<div class="filter" id="fdef_exposure">
+				<div class="filter_content">
+					<div class="info_label">Exposure Adjustment</div>
+					<div class="info_value">
+						<input type="range" data-key="amount" data-type="int" min="-100" max="100" step="1" value="0"/>
+						<input type="text" class="range"/>
+					</div>
+				</div>
+			</div> <!-- Exposure End -->
 			
 			<!-- Desaturate Filter -->
 			<div class="filter" id="fdef_desaturate">

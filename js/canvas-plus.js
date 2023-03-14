@@ -1554,6 +1554,83 @@ module.exports = Class.create({
 		return this.curves(opts);
 	},
 	
+	lighting: function(opts) {
+		// apply lighting functions, e.g. shadows, highlights
+		// opts: { shadows, highlights, channels, clip }
+		opts = this.copyHash( opts || {} );
+		var curve = [ [0,0], [63,63], [191,191], [255,255] ];
+		
+		// shadows
+		if (opts.shadows) {
+			curve[1][1] += opts.shadows;
+		}
+		
+		// highlights
+		if (opts.highlights) {
+			curve[2][1] += opts.highlights;
+		}
+		
+		for (var idx = 0, len = curve.length; idx < len; idx++) {
+			curve[idx][1] = Math.max(0, Math.min(255, curve[idx][1]) );
+		}
+		
+		var channels = opts.channels || 'rgb';
+		delete opts.channels;
+		
+		if (channels.match(/rgb/i)) opts.rgb = curve;
+		else {
+			if (channels.match(/r/i)) opts.red = curve;
+			if (channels.match(/g/i)) opts.green = curve;
+			if (channels.match(/b/i)) opts.blue = curve;
+		}
+		if (channels.match(/a/i)) opts.alpha = curve;
+		
+		return this.curves(opts);
+	},
+	
+	exposure: function(opts) {
+		// apply exposure adjustment
+		// opts: { amount, channels, clip }
+		if (typeof(opts) == 'number') {
+			opts = { amount: opts };
+		}
+		opts = this.copyHash( opts || {} );
+		var curve = [ 0, 63, 127, 191, 255 ];
+		
+		// exposure
+		if (opts.amount) {
+			if (opts.amount > 0) {
+				curve[1] += (opts.amount * 2);
+				curve[2] += (opts.amount * 3);
+				curve[3] += (opts.amount * 4);
+			}
+			else {
+				opts.amount /= 2;
+				curve[4] += (opts.amount * 5);
+				curve[3] += (opts.amount * 4);
+				curve[2] += (opts.amount * 3);
+				curve[1] += (opts.amount * 2);
+			}
+		}
+		
+		for (var idx = 0, len = curve.length; idx < len; idx++) {
+			curve[idx] = Math.max(0, Math.min(255, curve[idx]) );
+		}
+		
+		var channels = opts.channels || 'rgb';
+		delete opts.channels;
+		
+		if (channels.match(/rgb/i)) opts.rgb = curve;
+		else {
+			if (channels.match(/r/i)) opts.red = curve;
+			if (channels.match(/g/i)) opts.green = curve;
+			if (channels.match(/b/i)) opts.blue = curve;
+		}
+		if (channels.match(/a/i)) opts.alpha = curve;
+		
+		return this.curves(opts);
+	},
+	
 	generateCurve: function(points) {
 		// Generate curve from points using monotone cubic interpolation.
 		// This is somewhat like Adobe Photoshop's 'Curves' filter.
@@ -3719,7 +3796,7 @@ module.exports = Class.create({
 },{"blob-to-buffer":39,"buffer":45,"crc-32":50,"pixl-class":125,"zlib":43}],26:[function(require,module,exports){
 (function (Buffer){(function (){
 // canvas-plus - Image Transformation Engine
-// WEBP Output Format Mixin
+// WebP Output Format Mixin
 // Copyright (c) 2023 Joseph Huckaby
 // Released under the MIT License
 
@@ -3729,27 +3806,27 @@ var toBuffer = require('blob-to-buffer');
 module.exports = Class.create({
 	
 	output_webp: function(callback) {
-		// output image in WEBP format to buffer
+		// output image in WebP format to buffer
 		var self = this;
 		if (this.requireRGBA().isError) return callback( this.getLastError() );
 		
 		// look for standard API first
 		if (this.get('useDataURLs')) {
-			this.logDebug(6, "Compressing into WEBP format (using browser)", { quality: this.get('quality') } );
+			this.logDebug(6, "Compressing into WebP format (using browser)", { quality: this.get('quality') } );
 			
 			var buf = Buffer.from( this.canvas.toDataURL('image/webp', this.get('quality') / 100).split(',')[1], 'base64' );
-			this.logDebug(6, "WEBP compression complete");
+			this.logDebug(6, "WebP compression complete");
 			return callback(false, buf);
 		}
 		else if (this.canvas.toBlob) {
-			this.logDebug(6, "Compressing into WEBP format (using browser)", { quality: this.get('quality') } );
+			this.logDebug(6, "Compressing into WebP format (using browser)", { quality: this.get('quality') } );
 			
 			this.canvas.toBlob( 
 				function(blob) {
 					// got Blob, now convert to Buffer
 					toBuffer(blob, function (err, buf) {
-						if (err) return self.doError('webp', "WEBP Encode Error: " + err, callback);
-						self.logDebug(6, "WEBP compression complete");
+						if (err) return self.doError('webp', "WebP Encode Error: " + err, callback);
+						self.logDebug(6, "WebP compression complete");
 						callback(null, buf);
 					});
 				},
@@ -3760,9 +3837,13 @@ module.exports = Class.create({
 		else if (this.webp) {
 			// use node WASM API
 			var imgData = this.context.getImageData(0, 0, this.get('width'), this.get('height'));
+			var opts = Object.assign( {}, this.get('webp') || {}, { quality: this.get('quality') } );
 			
-			this.webp.encode( imgData, { quality: this.get('quality') }, function(err, data) {
-				if (err) return doError('webp', "WEBP Encode Error: " + err, callback);
+			this.logDebug(6, "Compressing into WebP format", opts );
+			
+			this.webp.encode( imgData, opts, function(err, data) {
+				if (err) return self.doError('webp', "WebP Encode Error: " + err, callback);
+				self.logDebug(6, "WebP compression complete");
 				callback(null, data);
 			} );
 		} // node
@@ -3939,7 +4020,7 @@ var CanvasPlus = module.exports = Class.create({
 			key = arguments[0];
 			var value = arguments[1];
 			this.settings[key] = value;
-			this.logDebug(9, "Setting property: " + key + ": " + value);
+			this.logDebug(10, "Setting property: " + key + ": " + JSON.stringify(value));
 			
 			// pass along to active canvas if we have one
 			if (this.canvasSettingsKeys[key] && this.context) {
