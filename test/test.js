@@ -74,6 +74,11 @@ exports.tests = tests.map( function(data, idx) {
 	return func;
 } );
 
+exports.onAssertFailure = function(test, msg, data) {
+	if (!test._failures) test._failures = [];
+	test._failures.push(msg);
+};
+
 exports.tearDown = function(callback) {
 	// do some shutdown stuff here
 	app.finish();
@@ -258,11 +263,11 @@ app.refreshImage = function(test, data) {
 					// file size needs to be within +/- N%
 					var pct = Math.round( (ref.size / data.ref.size) * 100 );
 					var pct_diff = Math.abs( 100 - pct );
-					test.ok( pct_diff <= SIZE_PCT_MAX, "File size difference is outside acceptable range (" + pct_diff + "%)", { size: ref.size, ref: data.ref.size } );
+					test.ok( pct_diff <= SIZE_PCT_MAX, "File size difference is outside acceptable range (diff:" + pct_diff + "%, size:" + ref.size + ", ref:" + data.ref.size + ")", { size: ref.size, ref: data.ref.size } );
 					
 					// hash distance needs to be within N
 					var hdiff = self.canvas.hammingDistance( ref.hash, data.ref.hash );
-					test.ok( hdiff <= HASH_DIST_MAX, "Hash distance is outside acceptable range (" + hdiff + ")", { hash: ref.hash, ref: data.ref.hash } );
+					test.ok( hdiff <= HASH_DIST_MAX, "Hash distance is outside acceptable range (diff:" + hdiff + ")", { hash: ref.hash, ref: data.ref.hash } );
 					
 					// shove data into HTML
 					if (test.failed) {
@@ -275,12 +280,16 @@ app.refreshImage = function(test, data) {
 					}
 					
 					html += '<a id="test' + data.num + '"></a>';
-					html += '<div class="test_header ' + (test.failed ? 'failed' : '') + '">Test #' + data.num + ': ' + data.name + '</div>';
+					html += '<details ' + (test.failed ? 'open' : '') + '>';
+					html += '<summary class="test_header ' + (test.failed ? 'failed' : '') + '">Test #' + data.num + ': ' + data.name + '</summary>';
 					
 					// html += '<img src="' + image_filename + '">';
 					html += '<div><div class="checkerboard" style="display:inline-block; width:' + width + 'px; height:' + height + 'px;"><img src="' + image_filename + '" width="' + width + '" height="' + height + '"></div></div>';
 					
 					html += '<div class="test_footer">';
+					if (test._failures) {
+						html += '<p><b>Failures:</b> ' + test._failures.join(', ') + '</p>';
+					}
 					html += '<p>' + [
 						width + 'x' + height,
 						mode.toUpperCase() + ' ' + doc.format.toUpperCase(),
@@ -291,6 +300,7 @@ app.refreshImage = function(test, data) {
 					html += '<p><a href="' + data.uri + '" target="_blank">View in Playground</a></p>';
 					html += '</div>';
 					
+					html += '</details>';
 					html += "\n";
 					
 					// next test!
